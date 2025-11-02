@@ -1,7 +1,8 @@
 import Image from 'next/image';
+import React from 'react';
+import { LuPhoneCall, LuSearch } from "react-icons/lu";
 
-import { LuPhoneCall,LuSearch } from "react-icons/lu";
-export default function Header() {
+export default function Header(): React.JSX.Element {
   return (
     <>
       <header className="w-full flex flex-col lg:flex-row items-center justify-between px-4 sm:px-6 lg:px-8 xl:px-10 gap-3 sm:gap-4 py-2 sm:py-3">

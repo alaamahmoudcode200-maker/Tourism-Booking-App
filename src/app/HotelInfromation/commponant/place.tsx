@@ -1,7 +1,7 @@
-// app/HotelInformation/PropertyDetails.jsx
 'use client';
 
 import Image from 'next/image';
+import React from 'react';
 import {
   FaWifi,
   FaParking,
@@ -14,9 +14,14 @@ import {
   FaMapMarkerAlt,
 } from 'react-icons/fa';
 
+interface Amenity {
+  icon: React.ReactNode;
+  name: string;
+}
+
 export default function PropertyDetails() {
   // ✅ نفس المصفوفة اللي حددتها
-  const images = [
+  const images: string[] = [
     '/deitals.jpg',
     '/room2.jpg',
     '/room3.jpg',
@@ -29,7 +34,7 @@ export default function PropertyDetails() {
   // الصور الصغيرة = باقي الصور (نضمن أن يكون عندهم 4 عناصر)
   const smallImages = [...images.slice(1), images[1] || images[0]].slice(0, 4);
 
-  const amenities = [
+  const amenities: Amenity[] = [
     { icon: <FaWifi size={20} />, name: 'Free Wifi' },
     { icon: <FaParking size={20} />, name: 'Parking Available' },
     { icon: <FaUtensils size={20} />, name: 'Restaurant' },

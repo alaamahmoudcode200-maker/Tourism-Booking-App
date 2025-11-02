@@ -1,5 +1,7 @@
 import Image from "next/image";
-export default function Hero() {
+import React from "react";
+
+export default function Hero(): React.JSX.Element {
   return (
     <section className="w-full  sm:-mt-20 bg-gray-50">
       <div className="w-full grid grid-cols-1 items-center">

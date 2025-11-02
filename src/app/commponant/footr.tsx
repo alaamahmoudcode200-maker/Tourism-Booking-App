@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import React from 'react';
 import {
   FaPhone,
   FaEnvelope,
@@ -10,7 +11,7 @@ import {
   FaInstagram,
 } from 'react-icons/fa';
 
-export default function Footer() {
+export default function Footer(): React.JSX.Element {
   return (
     <footer className="bg-black w-full text-white py-8 sm:py-10 px-4 sm:px-6 lg:px-8">
       {/* القسم الرئيسي */}

@@ -63,6 +63,8 @@ export default function StepsWorke() {
       <Image 
         src="/line.png"
         alt=""
+        width={1200}
+        height={400}
         className="absolute inset-0 m-auto w-full h-auto object-contain -z-1 hidden lg:block"
       />
 
@@ -71,18 +73,18 @@ export default function StepsWorke() {
         {/* Left images */}
         <div className="steps-left flex-1 flex flex-col items-center gap-4 sm:gap-6">
           <div className="w-full max-w-[300px] sm:max-w-[380px] lg:max-w-[420px] rounded-xl sm:rounded-2xl lg:rounded-[25px] overflow-hidden shadow-lg">
-            <Image  src="/pepole.png" alt="people" className="w-full h-auto object-cover" />
+            <Image  src="/pepole.png" alt="people" width={420} height={420} className="w-full h-auto object-cover" />
           </div>
 
           <div className="flex gap-3 sm:gap-4">
             <div className="w-[150px] sm:w-[180px] lg:w-[200px] rounded-lg overflow-hidden shadow">
-              <Image  src="/card.png" alt="card" className="w-full h-full object-cover" />
+              <Image  src="/card.png" alt="card" width={200} height={200} className="w-full h-full object-cover" />
             </div>
             <div className="w-[100px] sm:w-[120px] lg:w-[140px] overflow-hidden">
               <div className="">
-                <Image  src="/giral.png" alt="girl" className="w-full h-full rounded-lg object-cover" />
+                <Image  src="/giral.png" alt="girl" width={140} height={140} className="w-full h-full rounded-lg object-cover" />
                 <div className="-mt-6 sm:-mt-8 flex justify-center">
-                  <Image  src="/mog.png" alt="girl" className="w-2/3 h-1/2 object-cover" />
+                  <Image  src="/mog.png" alt="girl" width={100} height={100} className="w-2/3 h-1/2 object-cover" />
                 </div>
               </div>
             </div>

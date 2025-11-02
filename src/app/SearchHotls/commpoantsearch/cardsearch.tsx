@@ -1,10 +1,25 @@
 'use client';
 
 import Image from 'next/image';
+import React from 'react';
+
+interface Hotel {
+  id: number;
+  name: string;
+  location: string;
+  features: string[];
+  guests: string;
+  nights: string;
+  description: string;
+  originalPrice: number;
+  discountedPrice: number;
+  discountPercent: number;
+  image: string;
+}
 
 export default function SearchResultCards() {
   // ✅ بيانات الفنادق في مصفوفة
-  const hotels = [
+  const hotels: Hotel[] = [
     {
       id: 1,
       name: 'Radisson Blu',

@@ -1,6 +1,7 @@
 'use client';
 
 import { FaBarcode } from 'react-icons/fa';
+import Image from 'next/image';
 
 export default function DigitalTicket() {
   return (
@@ -28,7 +29,7 @@ export default function DigitalTicket() {
         {/* Flight 1 */}
         <div className="grid grid-cols-5 gap-4 p-4 items-start border-b border-gray-200">
           <div className="flex items-center gap-2">
-            <img src="/lufthansa-logo.png" alt="Lufthansa" className="w-8 h-8 rounded-full" />
+            <Image src="/lufthansa-logo.png" alt="Lufthansa" width={32} height={32} className="w-8 h-8 rounded-full" />
             <div>
               <div className="text-sm font-semibold text-gray-800">TK 881</div>
               <div className="text-xs text-gray-500">Economy Class</div>
@@ -72,7 +73,7 @@ export default function DigitalTicket() {
         {/* Flight 2 */}
         <div className="grid grid-cols-5 gap-4 p-4 items-start">
           <div className="flex items-center gap-2">
-            <img src="/british-airways-logo.png" alt="British Airways" className="w-8 h-8 rounded-full" />
+            <Image src="/british-airways-logo.png" alt="British Airways" width={32} height={32} className="w-8 h-8 rounded-full" />
             <div>
               <div className="text-sm font-semibold text-gray-800">TK 29</div>
               <div className="text-xs text-gray-500">Economy Class</div>

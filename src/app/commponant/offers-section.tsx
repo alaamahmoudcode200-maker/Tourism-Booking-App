@@ -2,6 +2,7 @@
 
 import React, { useRef } from 'react';
 import { FaChevronLeft, FaChevronRight, FaArrowRight } from 'react-icons/fa';
+import Image from 'next/image';
 
 // تعريف نوع العرض (Offer)
 interface Offer {
@@ -66,12 +67,14 @@ export default function OffersSection() {
             <div
               key={o.id}
               className="offer-card flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[360px] h-[220px] sm:h-[250px] lg:h-[280px] rounded-xl sm:rounded-2xl overflow-hidden flex items-end p-4 sm:p-6 shadow-md relative group hover:shadow-lg transition"
-              style={{
-                backgroundImage: `url(${o.image})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
             >
+              <Image
+                src={o.image}
+                alt={o.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 280px, (max-width: 1024px) 320px, 360px"
+              />
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors pointer-events-none" />
               <div className={`offer-content relative z-10 ${o.textColor}`}>
                 <span className="inline-block bg-orange-500 text-white text-xs font-semibold px-2 sm:px-3 py-1 rounded-full mb-2 sm:mb-3">

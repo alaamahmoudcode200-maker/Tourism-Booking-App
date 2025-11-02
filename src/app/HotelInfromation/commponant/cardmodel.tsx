@@ -1,12 +1,46 @@
-
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
+import React, { useState } from 'react';
+
+interface RoomInfo {
+  title: string;
+  description: string;
+  bedType: string;
+  price: string;
+  priceNote: string;
+  buttonText: string;
+  mealOption: string;
+  cancellation: string;
+  payment: string;
+}
+
+interface RoomServices {
+  Services: string[];
+  'Room Amenities': string[];
+  Bathroom: string[];
+}
+
+interface Amenities {
+  'Media/Technology': string[];
+  'Food & Drink': string[];
+  'Services/Extras': string[];
+}
+
+interface Policy {
+  title: string;
+  text: string;
+}
+
+interface Policies {
+  'Booking terms': string;
+  'Payment terms': string;
+  'Property Policies': Policy[];
+}
 
 export default function CardModelDeitals() {
   // ✅ بيانات الصور
-  const images = [
+  const images: string[] = [
     '/room2.jpg',
     '/room2.jpg',
     '/room3.jpg',
@@ -16,7 +50,7 @@ export default function CardModelDeitals() {
 
   // ✅ بيانات الغرفة الأساسية
 
-  const roomInfo = {
+  const roomInfo: RoomInfo = {
     title: 'Superior room, 30 m²',
     description: 'Superior room 1 queen bed garden, courtyard or city view (double)',
     bedType: 'Double bed',
@@ -29,7 +63,7 @@ export default function CardModelDeitals() {
   };
 
   // ✅ خدمات الغرفة (3 أعمدة)
-  const roomServices = {
+  const roomServices: RoomServices = {
     Services: [
       'Room service (24 hours)',
       'Housekeeping',
@@ -54,7 +88,7 @@ export default function CardModelDeitals() {
   };
 
   // ✅ وسائل الراحة (3 أعمدة)
-  const amenities = {
+  const amenities: Amenities = {
     'Media/Technology': [
       'Telephone',
       'Cable channels',
@@ -76,7 +110,7 @@ export default function CardModelDeitals() {
   };
 
   // ✅ الشروط والسياسات
-  const policies = {
+  const policies: Policies = {
     'Booking terms': 'Free cancellation until 16 August. After this date, a charge of 100% of the total amount will be applied.',
     'Payment terms': 'The total price of the room must be paid at the time of booking.',
     'Property Policies': [
@@ -90,11 +124,11 @@ export default function CardModelDeitals() {
   // ✅ حالة الصورة
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const goToNext = () => {
+  const goToNext = (): void => {
     setCurrentImageIndex((prev) => (prev + 1) % images.length);
   };
 
-  const goToPrev = () => {
+  const goToPrev = (): void => {
     setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
   };
 
@@ -178,7 +212,7 @@ export default function CardModelDeitals() {
             <div key={title}>
               <h3 className="font-semibold text-gray-800 mb-3">{title}</h3>
               <ul className="space-y-1 text-sm text-gray-600">
-                {items.map((item, i) => (
+                {(items as string[]).map((item: string, i: number) => (
                   <li key={i}>{item}</li>
                 ))}
               </ul>
@@ -194,7 +228,7 @@ export default function CardModelDeitals() {
             <div key={title}>
               <h3 className="font-semibold text-gray-800 mb-3">{title}</h3>
               <ul className="space-y-1 text-sm text-gray-600">
-                {items.map((item, i) => (
+                {(items as string[]).map((item: string, i: number) => (
                   <li key={i}>{item}</li>
                 ))}
               </ul>

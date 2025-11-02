@@ -1,8 +1,26 @@
 "use client";
 import React, { useState } from "react";
 import { FaRegHeart, FaMoon, FaUser } from "react-icons/fa";
+import Image from "next/image";
 
-const tours = [
+interface TourBadge {
+  text: string;
+  color: string;
+}
+
+interface Tour {
+  id: number;
+  image: string;
+  title: string;
+  duration: string;
+  guests: string;
+  price: string;
+  badge: TourBadge;
+}
+
+type FavoriteState = Record<number, boolean>;
+
+const tours: Tour[] = [
   {
     id: 1,
     image: "/Grand4.png",
@@ -88,9 +106,11 @@ const tours = [
 ];
 
 export default function CardHotels() {
-  const [fav, setFav] = useState(() => ({}));
+  const [fav, setFav] = useState<FavoriteState>({});
 
-  const toggleFav = (id) => setFav((s) => ({ ...s, [id]: !s[id] }));
+  const toggleFav = (id: number): void => {
+    setFav((s) => ({ ...s, [id]: !s[id] }));
+  };
 
   return (
     <section className="max-w-[1150px] - mx-auto px-5 py-12">
@@ -102,7 +122,7 @@ export default function CardHotels() {
             className="group relative  w-[380px] bg-white border border-gray-100 rounded-[20px] overflow-hidden shadow-sm transition-transform duration-400 hover:-translate-y-2 hover:shadow-lg"
           >
             <div className="relative h-[240px] overflow-hidden">
-              <img src={t.image} alt={t.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05]" />
+              <Image src={t.image} alt={t.title} width={380} height={240} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05]" />
               <span className={`absolute top-4 left-4 text-white text-xs font-semibold px-3 py-1 rounded-full ${t.badge.color}`}>{t.badge.text}</span>
 
               <button

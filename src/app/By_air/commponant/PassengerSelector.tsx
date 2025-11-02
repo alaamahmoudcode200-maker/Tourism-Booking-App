@@ -23,7 +23,7 @@ export default function PassengerSelector() {
 
   return (
      <div className="dropdown dropdown-end ">
-            <label htmlFor="passengers" className="block text-gray-400 text-xs mb-1">Who's Flying?</label>
+            <label htmlFor="passengers" className="block text-gray-400 text-xs mb-1">Who&apos;s Flying?</label>
              <div className="flex">
                  <input
               id="passengers"

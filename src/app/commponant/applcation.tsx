@@ -1,8 +1,9 @@
 'use client';
 
 import Image from 'next/image';
+import React from 'react';
 
-export default function ApplcationDownload() {
+export default function ApplcationDownload(): React.JSX.Element {
   return (
     <div className="bg-orange-50 py-8 sm:py-12 lg:py-16 w-full px-4 sm:px-6 lg:px-8">
       {/* القسم الرئيسي */}

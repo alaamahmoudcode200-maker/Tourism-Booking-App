@@ -1,21 +1,50 @@
 'use client';
 
-
 import Image from 'next/image';
+import React from 'react';
 
+interface ImageData {
+  id: number;
+  src: string;
+  alt: string;
+}
+
+interface MealOption {
+  id: string;
+  label: string;
+  default: boolean;
+}
+
+interface CancellationOption {
+  id: string;
+  label: string;
+  default: boolean;
+}
+
+interface RoomData {
+  title: string;
+  roomDetails: string;
+  payment: string;
+  price: string;
+  priceNote: string;
+  mealsOptions: MealOption[];
+  cancellationOptions: CancellationOption[];
+  moreDetailsLink: string;
+  bookNowText: string;
+}
 
 export default function RoomBooking() {
   // بيانات الصور
-  const images = [
+  const images: ImageData[] = [
      {id: 1, src: '/room.jpg', alt: 'Room Image 1'},
-     {id: 2,src: '/room2.jpg' , alt: 'Room Image 1' },
-     {id: 3, src: '/room3.jpg', alt: 'Room Image 1' },
-     {id: 4, src: '/room.jpg', alt: 'Room Image 1'}, 
-      {id: 5, src: '/room.jpg', alt: 'Room Image 1'}, 
+     {id: 2, src: '/room2.jpg', alt: 'Room Image 2'},
+     {id: 3, src: '/room3.jpg', alt: 'Room Image 3'},
+     {id: 4, src: '/room.jpg', alt: 'Room Image 4'}, 
+     {id: 5, src: '/room.jpg', alt: 'Room Image 5'}, 
   ];
-;
-    // إنشاء عناصر الصور        
-    const imglist = images.map((image) => ( 
+
+  // إنشاء عناصر الصور        
+  const imglist = images.map((image) => ( 
         <Image
             key={image.id}
             src={image.src}
@@ -26,7 +55,7 @@ export default function RoomBooking() {
             className=" rounded object-cover"
         />
     )); 
-      const roomData = {
+  const roomData: RoomData = {
     title: 'Superior room, 30 m²',
     roomDetails: 'Double bed',
     payment: 'Pay Pal',
@@ -119,7 +148,10 @@ export default function RoomBooking() {
           </div>
           <div className="flex items-center gap-4">
             <span className="text-2xl font-bold text-orange-500">{roomData.price}</span>
-            <button onClick={()=>document.getElementById('my_modal_4').showModal()}
+            <button onClick={()=>{
+              const modal = document.getElementById('my_modal_4') as HTMLDialogElement | null;
+              if (modal) modal.showModal();
+            }}
             className="px-6 py-2 bg-orange-500 hover:bg-orange-600 text-white rounded-md font-medium transition">
               {roomData.bookNowText}
             </button>

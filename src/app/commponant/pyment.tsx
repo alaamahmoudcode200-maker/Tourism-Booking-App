@@ -1,9 +1,10 @@
 'use client';
 
 import Image from 'next/image';
+import React from 'react';
 import { Check } from 'lucide-react';
 
-export default function PaymentCommponant() {
+export default function PaymentCommponant(): React.JSX.Element {
   return (
     <div className="flex flex-col md:flex-row items-center gap-8 py-12 px-6 lg:px-16 bg-white">
       {/* القسم الأيسر: النصوص والمزايا */}

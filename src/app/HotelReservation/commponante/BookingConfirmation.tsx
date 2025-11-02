@@ -1,10 +1,37 @@
 'use client';
 
 import Image from 'next/image';
+import React from 'react';
+
+interface BookingDetails {
+  stays: string;
+  checkIn: string;
+  checkOut: string;
+  quantity: string;
+  roomType: string;
+  bedType: string;
+}
+
+interface AdditionalInfo {
+  guests: string;
+  services: string;
+  mealPlan: string;
+}
+
+interface BookingData {
+  confirmationTitle: string;
+  instruction: string;
+  bookingNumber: string;
+  image: string;
+  details: BookingDetails;
+  additionalInfo: AdditionalInfo;
+  hotelRules: string[];
+  cancellationPolicy: string;
+}
 
 export default function BookingConfirmation() {
   // ✅ بيانات الحجز من كائن واحد (سهل التبديل لاحقًا مع API)
-  const bookingData = {
+  const bookingData: BookingData = {
     confirmationTitle: 'Your Hotel Reservation Confirmed',
     instruction: 'Contact EasySet24 If You Need To Change In Basic Information With 1385 Booking Number.',
     bookingNumber: '1385',

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { FaRegHeart, FaMoon, FaUser } from 'react-icons/fa';
+import Image from 'next/image';
 
 // تعريف نوع الـ Tour
 interface Tour {
@@ -76,10 +77,12 @@ export default function FeaturedHotels() {
             className="group relative w-full max-w-sm mx-auto sm:max-w-none bg-white border border-gray-100 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm transition-transform duration-400 hover:-translate-y-2 hover:shadow-lg"
           >
             <div className="relative h-[200px] sm:h-[240px] overflow-hidden">
-              <img
+              <Image
                 src={t.image}
                 alt={t.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-[1.05]"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               />
               <span
                 className={`absolute top-3 sm:top-4 left-3 sm:left-4 text-white text-xs font-semibold px-2 sm:px-3 py-1 rounded-full ${t.badge.color}`}

@@ -1,8 +1,19 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
-const Testimonials = () => {
+
+interface Testimonial {
+  id: number;
+  name: string;
+  location: string;
+  text: string;
+  avatar: string;
+}
+
+const Testimonials: React.FC = () => {
   // بيانات التقييمات
-  const testimonials = [
+  const testimonials: Testimonial[] = [
     {
       id: 1,
       name: 'Sara Mohamed',
@@ -27,7 +38,7 @@ const Testimonials = () => {
   ];
 
   // مكوّن نجمة واحدة
-  const StarIcon = () => (
+  const StarIcon: React.FC = () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
       <path d="M8 12l-4 2.182V2h8v12.182L8 12zm0-1.5 3 1.5H5l3-1.5zM8 0l-3 1.5h6L8 0z" />
     </svg>
@@ -76,6 +87,8 @@ const Testimonials = () => {
                  <Image
                   src={testimonial.avatar}
                   alt={testimonial.name}
+                  width={40}
+                  height={40}
                   className="w-8 h-8 sm:w-10 sm:h-10 rounded-full mr-3"
                   loading="lazy"
                 />
