@@ -100,7 +100,7 @@ export default function FeaturedHotels() {
                 />
               </button>
             </div>
-            <div className="absolute bottom-[-100%] left-0 w-full bg-white p-4 sm:p-5 transition-all duration-500 group-hover:bottom-0">
+            <div className="bg-white p-4 sm:p-5">
               <h3 className="text-base sm:text-lg text-gray-700 font-semibold mb-2 sm:mb-3 line-clamp-2">
                 {t.title}
               </h3>

@@ -133,7 +133,7 @@ export default function CardHotels() {
                 <FaRegHeart className={`text-sm ${fav[t.id] ? "text-red-500" : "text-gray-600"}`} />
               </button>
             </div>
-              <div className="absolute bottom-[-100%] left-0 w-full bg-white p-5 transition-all duration-500 group-hover:bottom-0">
+            <div className="bg-white p-5">
               <h3 className="text-lg text-gray-700 font-semibold mb-3">{t.title}</h3>
               <div className="flex text-sm text-gray-600 gap-6 mb-4">
                 <span className="flex items-center gap-2"><FaMoon className="text-sm" /> {t.duration}</span>

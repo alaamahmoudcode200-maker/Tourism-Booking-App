@@ -59,7 +59,7 @@ export default function FeaturedTours() {
   };
 
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4 sm:mb-6 gap-2 sm:gap-4">
         <h2 className="text-xl sm:text-2xl lg:text-3xl text-black font-bold">Our Featured Tours</h2>
         <a href="#" className="text-sm font-medium text-gray-900 hover:text-orange-600 transition">
@@ -100,7 +100,7 @@ export default function FeaturedTours() {
                 />
               </button>
             </div>
-            <div className="absolute bottom-[-100%] left-0 w-full bg-white p-4 sm:p-5 transition-all duration-500 group-hover:bottom-0">
+            <div className="bg-white p-4 sm:p-5">
               <h3 className="text-base sm:text-lg text-gray-700 font-semibold mb-2 sm:mb-3 line-clamp-2">
                 {t.title}
               </h3>
