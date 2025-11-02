@@ -3,7 +3,8 @@ import Hero from "../commponant/heroseaction";
 import NavTabs from "../commponant/nave";
 import SearchByAir from "./commponant/saerchByair";
 import ApplcationDownload from "../commponant/applcation";
-import Calendar from "./commponant/calender";
+import SearchFielterTekt from "./commponant/searchteakt";
+
 import Footer from "../commponant/footr";
 
 export default function Home() {
@@ -13,7 +14,7 @@ export default function Home() {
       <Hero />
       <NavTabs />
       <SearchByAir />
-   
+       <SearchFielterTekt/>
       <ApplcationDownload />
       <Footer />
     </main>

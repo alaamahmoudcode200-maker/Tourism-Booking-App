@@ -1,12 +1,12 @@
 'use client';
 
 import { Star } from 'lucide-react';
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 export default function FilterPanel() {
       const [min, setMin] = useState(50);
   const [max, setMax] = useState(450);
 
-  const handleChange = (e, isMin) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>, isMin: boolean) => {
     const value = Number(e.target.value);
     if (isMin) {
       if (value < max) setMin(value);

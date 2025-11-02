@@ -1,19 +1,24 @@
-"use client";
-import React, { useRef } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+'use client';
+
+import React, { useRef } from 'react';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import Image from 'next/image';
 
 const items = [1, 2, 3, 4];
 
 export default function Stories() {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const scroll = (direction) => {
+  const scroll = (direction: 'next' | 'prev'): void => {
     const el = containerRef.current;
     if (!el) return;
-    const card = el.querySelector(".story-card");
+    const card = el.querySelector('.story-card') as HTMLElement | null;
     const gap = 20;
     const cardWidth = (card?.clientWidth ?? 274) + gap;
-    el.scrollBy({ left: direction === "next" ? cardWidth : -cardWidth, behavior: "smooth" });
+    el.scrollBy({
+      left: direction === 'next' ? cardWidth : -cardWidth,
+      behavior: 'smooth',
+    });
   };
 
   return (
@@ -25,14 +30,14 @@ export default function Stories() {
         <div className="flex gap-2">
           <button
             aria-label="Previous"
-            onClick={() => scroll("prev")}
+            onClick={() => scroll('prev')}
             className="w-8 h-8 sm:w-10 sm:h-10 bg-white shadow-md rounded-full flex items-center justify-center hover:shadow-lg transition"
           >
             <FaChevronLeft className="text-gray-600 text-sm sm:text-base" />
           </button>
           <button
             aria-label="Next"
-            onClick={() => scroll("next")}
+            onClick={() => scroll('next')}
             className="w-8 h-8 sm:w-10 sm:h-10 bg-white shadow-md rounded-full flex items-center justify-center hover:shadow-lg transition"
           >
             <FaChevronRight className="text-gray-600 text-sm sm:text-base" />
@@ -45,13 +50,19 @@ export default function Stories() {
         id="stories"
         className="flex gap-4 sm:gap-5 overflow-x-auto scroll-smooth hide-scrollbar"
       >
-        {items.map((it, i) => (
+        {items.map((_, i) => (
           <div
             key={i}
             className="story-card group flex-none w-[240px] sm:w-[260px] lg:w-[274px] h-[300px] sm:h-[330px] lg:h-[356px] bg-white border border-gray-200 rounded-2xl sm:rounded-3xl lg:rounded-[32px] overflow-hidden relative shadow-sm transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg"
           >
             <div className="w-full h-full relative">
-              <img src={`/card.png`} alt={`story-${i}`} className="w-full h-full object-cover" />
+              <Image
+                src={`/card.png`}
+                alt={`story-${i}`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 240px, (max-width: 1024px) 260px, 274px"
+              />
               <button className="absolute left-1/2 -translate-x-1/2 -bottom-12 sm:-bottom-14 lg:-bottom-16 group-hover:bottom-3 sm:group-hover:bottom-4 transition-all duration-300 px-6 sm:px-8 lg:px-9 py-2 bg-[#E85528] text-white rounded-md font-semibold text-xs sm:text-sm">
                 try
               </button>

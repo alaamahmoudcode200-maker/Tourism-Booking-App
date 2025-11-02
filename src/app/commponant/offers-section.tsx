@@ -1,23 +1,38 @@
-"use client";
-import React, { useRef } from "react";
-import { FaChevronLeft, FaChevronRight, FaArrowRight } from "react-icons/fa";
+'use client';
 
-const offers = [
-  { id: 1, tag: "Special", title: "We Make Every Tour Special", image: "/offrs1.png", textColor: "text-white" },
-  { id: 2, tag: "Limited Offers", title: "Buy 1, Get 1 Free Attractions", image: "/offrs2.png", textColor: "text-black" },
-  { id: 3, tag: "Adventure", title: "Discover Nature’s Hidden Gems", image: "/offrs3.png", textColor: "text-white" },
+import React, { useRef } from 'react';
+import { FaChevronLeft, FaChevronRight, FaArrowRight } from 'react-icons/fa';
+
+// تعريف نوع العرض (Offer)
+interface Offer {
+  id: number;
+  tag: string;
+  title: string;
+  image: string;
+  textColor: string;
+}
+
+const offers: Offer[] = [
+  { id: 1, tag: 'Special', title: 'We Make Every Tour Special', image: '/offrs1.png', textColor: 'text-white' },
+  { id: 2, tag: 'Limited Offers', title: 'Buy 1, Get 1 Free Attractions', image: '/offrs2.png', textColor: 'text-black' },
+  { id: 3, tag: 'Adventure', title: 'Discover Nature’s Hidden Gems', image: '/offrs3.png', textColor: 'text-white' },
 ];
 
 export default function OffersSection() {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
 
-  const scroll = (dir) => {
+  const scroll = (dir: 'next' | 'prev'): void => {
     const el = ref.current;
     if (!el) return;
-    const card = el.querySelector(".offer-card");
+
+    const card = el.querySelector('.offer-card') as HTMLElement | null;
     const gap = 20;
     const cardW = (card?.clientWidth ?? 320) + gap;
-    el.scrollBy({ left: dir === "next" ? cardW : -cardW, behavior: "smooth" });
+
+    el.scrollBy({
+      left: dir === 'next' ? cardW : -cardW,
+      behavior: 'smooth',
+    });
   };
 
   return (
@@ -26,15 +41,15 @@ export default function OffersSection() {
         <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800">Special Offers</h2>
         <div className="flex gap-2">
           <button
-            aria-label="prev offers"
-            onClick={() => scroll("prev")}
+            aria-label="previous offers"
+            onClick={() => scroll('prev')}
             className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white shadow-md flex items-center justify-center hover:shadow-lg transition"
           >
             <FaChevronLeft className="text-gray-600 text-sm sm:text-base" />
           </button>
           <button
             aria-label="next offers"
-            onClick={() => scroll("next")}
+            onClick={() => scroll('next')}
             className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white shadow-md flex items-center justify-center hover:shadow-lg transition"
           >
             <FaChevronRight className="text-gray-600 text-sm sm:text-base" />
@@ -53,8 +68,8 @@ export default function OffersSection() {
               className="offer-card flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[360px] h-[220px] sm:h-[250px] lg:h-[280px] rounded-xl sm:rounded-2xl overflow-hidden flex items-end p-4 sm:p-6 shadow-md relative group hover:shadow-lg transition"
               style={{
                 backgroundImage: `url(${o.image})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
               }}
             >
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors pointer-events-none" />

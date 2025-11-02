@@ -1,9 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-
+import Modal from "../../commponant/models";
+import CardPay from "./modelpay";
 export default function PassengerForm() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  
 
   return (
     <div className="max-w-6xl mx-auto text-black bg-white rounded-xl shadow-sm p-8">
@@ -17,8 +19,8 @@ export default function PassengerForm() {
           id="passenger-count"
           className="w-full p-2.5 border border-gray-300 rounded-md text-sm bg-white focus:outline-none focus:ring-2 "
         >
-          <option>2 Adults, 3 Children, 1 Infant</option>
-          <option>1 Adult, 1 Child</option>
+          <option>2 Adults, 3Children, 1 Infant</option>
+          <option>1 Adult, 1Child</option>
           <option>3 Adults</option>
           <option>1 Adult, 2 Infants</option>
         </select>
@@ -136,6 +138,9 @@ export default function PassengerForm() {
                >
                  Pay
                </button>
+                <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+                  <CardPay/>   
+                </Modal>
         </div>
       
       </div>

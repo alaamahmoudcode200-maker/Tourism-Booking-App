@@ -2,18 +2,14 @@
 import React, { useState } from 'react';
 import { FcSimCardChip } from 'react-icons/fc';
 import MastercardIcon from './mastercard';
-export default function ModelPay() {
+export default function CardPay() {
         const [cardNumber, setCardNumber] = useState('');
         const [expiryDate, setExpiryDate] = useState('');
         const [vcc, setVcc] = useState('');
         const [cardHolder, setCardHolder] = useState('');
   return (
-<dialog id="my_modal_3" className="modal">
-  <div className="modal-box max-w-4xl bg-white">
-    <form method="dialog">
-      {/* if there is a button in form, it will close the modal */}
-      <button className="rounded-full w-5 h-5 cursor-pointer hover:bg-orange-500 hover:text-white bg-white text-black  absolute right-3 top-2">✕</button>
-    </form>
+
+  <div className=" max-w-4xl bg-white">
     <div className="grid grid-cols-1 items-center md:grid-cols-2 text-black  gap-6 ">
       {/* Payment Details */}
         <div className="max-w-full mx-auto p-6">
@@ -119,6 +115,6 @@ export default function ModelPay() {
   
     </div>
   </div>
-</dialog>
+
   )
 }

@@ -73,13 +73,13 @@ const Testimonials = () => {
               <h3 className="font-bold text-gray-800 mb-3 text-sm sm:text-base">The best booking system</h3>
               <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4 flex-grow">{testimonial.text}</p>
               <div className="flex items-center mt-auto">
-                <img
+                 <Image
                   src={testimonial.avatar}
                   alt={testimonial.name}
                   className="w-8 h-8 sm:w-10 sm:h-10 rounded-full mr-3"
                   loading="lazy"
                 />
-                <div className="flex-grow">
+                <div className=" flex-grow">
                   <div className="font-semibold text-xs sm:text-sm">{testimonial.name}</div>
                   <div className="text-xs text-gray-500">{testimonial.location}</div>
                 </div>

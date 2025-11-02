@@ -1,6 +1,7 @@
 'use client';
 import PassengerSelector from './PassengerSelector';
 import Calendar from './calender';
+import FormCity from './form_city';
 export default function SearchByAir() {
 
   return (
@@ -18,14 +19,7 @@ export default function SearchByAir() {
         <form className="flex flex-row items-stretch">
           {/* From */}
           <div className="flex-1 px-4 py-3 text-sm text-gray-800 border-r border-gray-100">
-            <label htmlFor="from" className="block text-gray-400 text-xs mb-1">From</label>
-            <input
-              id="from"
-              type="text"
-              value="Moscow"
-              readOnly
-              className="w-full bg-transparent outline-none font-semibold text-gray-800"
-            />
+            <FormCity/>
           </div>
 
           {/* To */}
