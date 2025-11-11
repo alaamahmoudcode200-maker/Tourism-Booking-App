@@ -1,5 +1,5 @@
 import React from 'react';
-import type { ProfileTab } from '../page';
+import type { ProfileTab } from '@/app/profile/page';
 import { FaUser, FaSliders, FaCreditCard, FaCircleQuestion, FaGear, FaBook } from 'react-icons/fa6';
 
 interface SidebarProps {
