@@ -1,4 +1,4 @@
-import DualCalendar from "./DualCalendar";  
+
 export default function FormCity() {
    const cities = [
     { name: "Sochi", country: "Russia" },

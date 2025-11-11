@@ -1,6 +1,5 @@
 'use client';
 import Image from 'next/image';
-import { FaBarcode } from 'react-icons/fa';
 import LayoverInfo from './LayoverInfo'
 import BarCodeSection from './BarCodeSection'
 

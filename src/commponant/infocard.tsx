@@ -1,6 +1,6 @@
 'use client';
 
-import { FaCoffee, FaWifi, FaCat, FaSmokingBan,  FaCar, FaMapMarkerAlt,FaTshirt } from 'react-icons/fa';
+import { FaCoffee, FaWifi, FaSmokingBan,  FaCar, FaMapMarkerAlt,FaTshirt } from 'react-icons/fa';
 import { TbPlayBasketball,TbCat  } from "react-icons/tb";
 export default function HotelInfoCard() {
   // ✅ بيانات الفندق الأساسية

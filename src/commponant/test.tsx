@@ -1,8 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { FaUser } from 'react-icons/fa';
-
 export default function HeaderTest() {
   return (
     <header className="bg-white h-30 shadow-sm ">

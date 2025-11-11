@@ -4,8 +4,7 @@ const ResponsiveSVG = () => {
   // لتوليد معرّفات فريدة إذا استخدم المكوّن أكثر من مرة
   const idPrefix = React.useId().replace(/:/g, '');
 
-  // دالة مساعدة لإعادة كتابة المعرّفات
-  const replaceIds = (str: string) => str.replace(/(_\d+_\d+)/g, `_${idPrefix}$1`);
+
 
   return (
     <svg

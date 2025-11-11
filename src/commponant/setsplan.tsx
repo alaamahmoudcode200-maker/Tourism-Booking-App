@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+
 
 // استيراد المكونات
 import MiniSeatMap from './firstclass';
@@ -8,7 +8,7 @@ import LongSeatMap from './economclass';
 import PlaneBackgroundSVG from './svgplan'; // تأكد أن الملف اسمه صحيح
 
 export default function PreferredSeat() {
-  const [add, setAdd] = useState<{ row: number; col: number } | null>(null);
+
 
   return (
     <div

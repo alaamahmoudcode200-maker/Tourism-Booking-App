@@ -1,6 +1,5 @@
 'use client';
 import Image from 'next/image';
-import { FaBarcode } from 'react-icons/fa';
 
 export default function BarCodeSection() {
   return (

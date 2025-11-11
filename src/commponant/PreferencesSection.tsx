@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Image from 'next/image';
 export const PreferencesSection: React.FC = () => {
   return (
     <section className="mb-10">
@@ -33,7 +33,7 @@ export const PreferencesSection: React.FC = () => {
             ].map((l) => (
               <div key={l.code} className="flex items-center justify-between p-2 rounded-lg">
                 <div className="flex items-center gap-3">
-                  <img src={`https://flagcdn.com/w40/${l.code}.png`} alt={l.name} className="w-8 h-[22px] rounded" />
+                  <Image fill src={""} alt={l.name} className="w-8 h-[22px] rounded" />
                   <span>{l.name}</span>
                 </div>
                 <label className="relative inline-block w-[45px] h-[24px]">

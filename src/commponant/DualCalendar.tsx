@@ -85,7 +85,7 @@ const DualCalendar = () => {
 
   // بيانات الشهرين
   const currentMonthData = months[currentMonth - 1];
-  const nextMonthData = months[currentMonth % 12];
+
 
   // أيام الشهرين
   const currentMonthDays = getCalendarDays(currentMonth, currentYear);
