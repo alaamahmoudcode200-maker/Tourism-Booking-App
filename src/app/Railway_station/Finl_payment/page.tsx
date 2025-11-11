@@ -13,8 +13,6 @@ export default function FinlPaymnt() {
       <NavTabs />
       <SearchByAir/>
       <PassengerForm/>
-
-
       <ApplcationDownload />
       <Footer />
     </main>

@@ -1,8 +1,8 @@
 import Header from "../../../commponant/header";
 import Hero from "../../../commponant/heroseaction";
 import NavTabs from "../../../commponant/nave";
-import SearchByAir from "@/commponant/saerchByair";
-import PassengerForm from "@/commponant/addPassengers";
+import SearchByAir from "../../../commponant/saerchByair";
+import PreferredSeatBuses from "@/commponant/PreferredSeatthebues";
 import ApplcationDownload from "../../../commponant/applcation";
 import Footer from "../../../commponant/footr";
 export default function FinlPaymnt() {
@@ -12,9 +12,7 @@ export default function FinlPaymnt() {
       <Hero />
       <NavTabs />
       <SearchByAir/>
-      <PassengerForm/>
-
-
+      <PreferredSeatBuses/>
       <ApplcationDownload />
       <Footer />
     </main>

@@ -1,10 +1,9 @@
 import Header from "../../commponant/header";
 import Hero from "../../commponant/heroseaction";
 import NavTabs from "../../commponant/nave";
-import SearchByAir from "@/commponant/saerchByair";
 import ApplcationDownload from "../../commponant/applcation";
-import SearchFielterTekt from "@/commponant/searchteakt";
-
+import ToursRsult from "@/commponant/toursersult";
+import SearchByAir from "@/commponant/saerchByair";
 import Footer from "../../commponant/footr";
 
 export default function Home() {
@@ -13,8 +12,8 @@ export default function Home() {
       <Header />
       <Hero />
       <NavTabs />
-      <SearchByAir />
-       <SearchFielterTekt/>
+      <SearchByAir/>
+      <ToursRsult/>
       <ApplcationDownload />
       <Footer />
     </main>
