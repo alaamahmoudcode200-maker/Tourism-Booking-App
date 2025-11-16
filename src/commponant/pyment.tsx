@@ -35,7 +35,7 @@ export default function PaymentCommponant(): React.JSX.Element {
         </ul>
 
         {/* شعارات الدفع */}
-        <div className="flex flex-wrap gap-4 mt-8">
+        <div className="grid grid-cols-4 items-center  gap-4 mt-8">
           <Image src="/paypal.png" alt="PayPal" width={80} height={30} className=" object-contain" />
           <Image src="/strip.png" alt="Stripe" width={80} height={30} className="object-contain" />
           <Image src="/mastercard.png" alt="Mastercard" width={80} height={30} className="object-contain" />
@@ -44,7 +44,7 @@ export default function PaymentCommponant(): React.JSX.Element {
       </div>
 
       {/* القسم الأيمن: الصور والفيديو */}
-      <div className="md:w-1/2 relative">
+      <div className="w-full md:w-1/2 relative">
         {/* صورة كبيرة مع زر تشغيل */}
         <div className="relative rounded-xl overflow-hidden shadow-lg">
           <Image
@@ -64,7 +64,7 @@ export default function PaymentCommponant(): React.JSX.Element {
         </div>
 
         {/* كرت التقييم */}
-        <div className="absolute bottom-[-60px] left-6 bg-white p-4  rounded-xl shadow-md w-[280px] z-10">
+        <div className="absolute  bottom-[-60px] md:left-0 bg-white p-4  rounded-xl shadow-md w-[280px] z-10">
           <div className="flex items-center gap-3 mb-2">
             <Image
               src="/user.png"
@@ -91,7 +91,7 @@ export default function PaymentCommponant(): React.JSX.Element {
         </div>
 
         {/* صورة العصير في الزاوية السفلى اليمنى */}
-        <div className="absolute bottom-[-60px] right-6">
+        <div className="absolute hidden md:block bottom-[-60px] right-0 md:right-6">
           <Image
             src="/orange.png"
             alt="Orange juice with oranges"

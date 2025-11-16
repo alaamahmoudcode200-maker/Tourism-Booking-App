@@ -45,7 +45,7 @@ const Testimonials: React.FC = () => {
   );
 
   return (
-    <section className="bg-orange-50 min-h-[600px] sm:min-h-[700px] lg:min-h-[800px] py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section className="bg-orange-50  w-full lg:min-h-[400px] py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* العنوان */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 sm:mb-12 gap-4 sm:gap-8">
         <div className="flex-1">
@@ -75,7 +75,7 @@ const Testimonials: React.FC = () => {
 
       {/* كروت التقييمات */}
       <div className="relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-7xl mx-auto">
+        <div className="grid  sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
@@ -108,7 +108,7 @@ const Testimonials: React.FC = () => {
 
         {/* الرسومات الزينة */}
         {/* يسار: كاميرا، هاتف، قبعة */}
-        <div className="absolute z-[-1] left-0 bottom-[-100px] sm:bottom-[-150px] lg:bottom-[-170px] -translate-y-1/2 hidden md:block">
+        <div className="absolute hidden z-[-1] left-0  sm:bottom-[-150px] lg:bottom-[-170px] -translate-y-1/2  md:block">
           <div className="relative w-60 h-60 sm:w-80 sm:h-80">
             <div className="text-2xl sm:text-4xl absolute bottom-[-120px] sm:bottom-[-150px] -left-1">
               <Image
@@ -123,7 +123,7 @@ const Testimonials: React.FC = () => {
         </div>
 
         {/* يمين: طائرة ورقية */}
-        <div className="absolute z-[-1] right-0 -top-20 sm:-top-30 hidden md:block">
+        <div className="absolute z-[-1] right-0  sm:-top-30 hidden md:block">
           <div className="text-3xl sm:text-5xl">
             <Image
               src="/decor.png"

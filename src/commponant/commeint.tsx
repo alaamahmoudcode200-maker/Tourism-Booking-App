@@ -6,7 +6,8 @@ export default function AccountCard() {
       <div className="flex items-center gap-3 mb-4">
         {/* Profile Image */}
         <Image
-          fill
+           width={12}
+           height={12}
           src="/profile.jpg" // استبدلها بصورتك الفعلية
           alt="Profile"
           className="w-12 h-12 rounded-full object-cover"

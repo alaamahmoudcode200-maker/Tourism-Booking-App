@@ -5,31 +5,30 @@ interface ProfileSectionProps {
 }
 
 export const ProfileSection: React.FC<ProfileSectionProps> = ({ onEdit }) => {
-  return (
-    <section className="mb-10">
-      <div className="mb-6">
-        <h2 className="text-[18px] flex items-center justify-between">
-          Basic Information
-          <span
-            className="text-[#ff5722] text-[14px] cursor-pointer"
-            onClick={onEdit}
-          >
-            Edit
-          </span>
-        </h2>
-        <p className="text-[#666] text-[14px] mb-5">
-          Make Sure This Information Matches Your Travel ID, Like Your Passport Or License.
-        </p>
+   return (
+    <section>
+      <h2 className="text-lg font-semibold mb-2 flex justify-between items-center">
+        Basic Information <span className="text-orange-600 text-sm cursor-pointer">Edit</span>
+      </h2>
+      <p className="text-gray-600 text-sm mb-6">
+        Make sure this information matches your travel ID, like your passport or license.
+      </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-6">
-          <div className="text-[14px]"><strong className="block text-black mb-1">Full Name</strong><span className="text-[#666]">Anna Carolina</span></div>
-          <div className="text-[14px]"><strong className="block text-black mb-1">Date Of Birth</strong><span className="text-[#666]">Not Provided</span></div>
-          <div className="text-[14px]"><strong className="block text-black mb-1">Gender</strong><span className="text-[#666]">Not Provided</span></div>
-          <div className="text-[14px]"><strong className="block text-black mb-1">Mobile Number</strong><span className="text-[#666]">Not Provided</span></div>
-          <div className="text-[14px]"><strong className="block text-black mb-1">Email</strong><span className="text-[#666]">AnnaCarolina@gmail.com</span></div>
-          <div className="text-[14px]"><strong className="block text-black mb-1">Emergency Contact</strong><span className="text-[#666]">Not Provided</span></div>
-          <div className="text-[14px]"><strong className="block text-black mb-1">Address</strong><span className="text-[#666]">Not Provided</span></div>
-        </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {[
+          ["Full Name", "Anna Carolina"],
+          ["Date Of Birth", "Not Provided"],
+          ["Gender", "Not Provided"],
+          ["Mobile Number", "Not Provided"],
+          ["Email", "AnnaCarolina@gmail.com"],
+          ["Emergency Contact", "Not Provided"],
+          ["Address", "Not Provided"],
+        ].map(([label, value]) => (
+          <div key={label}>
+            <strong className="block text-sm text-gray-900">{label}</strong>
+            <span className="text-gray-600 text-sm">{value}</span>
+          </div>
+        ))}
       </div>
     </section>
   );

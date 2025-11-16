@@ -1,20 +1,23 @@
-import Image from "next/image";
-import React from "react";
+'use client';
 
-export default function Hero(): React.JSX.Element {
+import Image from 'next/image';
+
+export default function ResponsiveHeroImage() {
   return (
-    <section className="w-full  sm:-mt-20 bg-gray-50">
+    <section className="w-full  bg-gray-50 ">
       <div className="w-full grid grid-cols-1 items-center">
-        <div className="relative w-full h-[200px] sm:h-[300px] md:h-[400px] lg:h-[500px] xl:h-[600px] overflow-hidden shadow-md">
-          {/* الصورة كخلفية مصغّرة وممتدة */}
+        {/* حاوية الصورة مع ارتفاعات متجاوبة */}
+        <div className="relative w-full h-[180px] sm:h-[250px] md:h-[350px] lg:h-[450px] xl:h-[550px] overflow-hidden shadow-md">
+          {/* الصورة */}
           <Image
             src="/slider.jpg"
             alt="Scenic destination"
             fill
             className="object-cover"
-            style={{ zIndex: 0 }}
-            priority
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+            priority // يحسّن LCP
+            sizes="(max-width: 640px) , (max-width: 768px) , (max-width: 1024px) "
+            quality={85} // جودة مناسبة بين الحجم والأداء
+            // اختياري: لو عندك blurDataURL
           />
         </div>
       </div>

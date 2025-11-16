@@ -62,29 +62,29 @@ const flights: Flight[] = [
 
 export default function DigitalTicket() {
   return (
-    <div className="w-5xl border border-gray-300 mx-auto p-2 sm:p-6 bg-white rounded-lg shadow-sm">
+    <div className="w-full md:w-5xl border border-gray-300 mx-auto p-2 sm:p-6 bg-white rounded-lg shadow-sm">
       <div className="w-full grid grid-cols-1 md:grid-cols-5 gap-4">
         {/* Main Table (4/5 columns) */}
-        <div className="col-span-4 pr-10 border-r-2 border-dashed">
+        <div className="w-full md:col-span-4 md:pr-10 border-0 md:border-r-2 border-dashed">
           {/* Header Row */}
-          <div className="grid grid-cols-1 border border-gray-300 md:grid-cols-7 rounded-t-lg">
+          <div className="grid grid-cols-1 border border-gray-300 md:grid-cols-7 overflow-hidden rounded-t-xl md:rounded-t-lg">
             <div className="col-span-2">
-              <div className="bg-neutral-400 text-center border-r border-white text-white rounded-tl-lg p-2">
+              <div className="bg-neutral-400 text-center md:border-r border-white text-white md:rounded-tl-lg p-2">
                 Flight
               </div>
             </div>
             <div className="col-span-2">
-              <div className="bg-neutral-400 text-center border-r border-white text-white p-2">
+              <div className="bg-neutral-400 text-center md:border-r border-white text-white p-2">
                 From
               </div>
             </div>
             <div className="col-span-2">
-              <div className="bg-neutral-400 text-center border-r border-white text-white p-2">
+              <div className="bg-neutral-400 text-center md:border-r border-white text-white p-2">
                 To
               </div>
             </div>
             <div className="col-span-1">
-              <div className="bg-neutral-400 text-center border-white text-white rounded-tr-lg p-2">
+              <div className="bg-neutral-400 text-center border-white text-white md:rounded-tr-lg p-2">
                 Duration
               </div>
             </div>
@@ -159,7 +159,7 @@ export default function DigitalTicket() {
         </div>
          
         {/* Bar Code Column (1/5) */}
-        <div className="col-span-1 ml-5 flex flex-col">
+        <div className="col-span-1 md:ml-5 flex flex-col">
           <div className="bg-neutral-400 text-center border-white text-white rounded-t-lg p-2 ">
             Bar Code
           </div>

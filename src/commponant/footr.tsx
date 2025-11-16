@@ -32,7 +32,7 @@ export default function Footer(): React.JSX.Element {
           </div>
           <div className="text-lg sm:text-xl font-bold text-orange-400">1-800-222-8888</div>
         </div>
-
+          
         {/* العمود 2: Company */}
         <div>
           <h3 className="font-semibold text-base sm:text-lg mb-3 sm:mb-4">Company</h3>

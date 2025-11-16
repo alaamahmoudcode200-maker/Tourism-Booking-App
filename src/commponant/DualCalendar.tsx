@@ -108,10 +108,10 @@ const DualCalendar = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-sm">
+    <div className=" md:max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-sm">
 
       {/* التقويمان جنب بعض */}
-      <div className="grid grid-cols-2 gap-4 py-3 rounded-2xl bg-gray-100">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 py-3 rounded-2xl bg-gray-100">
         <div>
           <div className='grid grid-cols-8 px-2  items-center'>
             <div className=''>

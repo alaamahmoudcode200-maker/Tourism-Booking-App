@@ -4,7 +4,7 @@ import React, { useRef } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Image from 'next/image';
 
-const items = [1, 2, 3, 4];
+const items = [1, 2, 3, 4,5,6,7,8,9];
 
 export default function Stories() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -22,7 +22,7 @@ export default function Stories() {
   };
 
   return (
-    <section className="max-w-7xl -mt-12 sm:-mt-15 mx-auto relative px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <section className="w-full md:max-w-6xl -mt-12 sm:-mt-15 mx-auto relative px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <h2 className="text-2xl sm:text-3xl text-black font-bold mb-4 sm:mb-5">Stories</h2>
 
       <div className="flex items-center justify-between mb-4 sm:mb-6">

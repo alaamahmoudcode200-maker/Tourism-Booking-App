@@ -2,20 +2,20 @@ import { FaArrowRightLong  } from 'react-icons/fa6';
 import ResponsiveSVG from './svg';
 export default function DetailsTikte() {
   return (
-    <div className="p-6 bg-white">
+    <div className=" bg-white w-full">
       <div className="px-4 text-3xl mb-6">
         <div className='flex items-center gap-4'>
           Luton <FaArrowRightLong /> Sofia
         </div>
         <span className="text-gray-500 text-sm">12 November, Wed</span>
       </div>
-     <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg shadow-md overflow-hidden max-w-4xl">
+     <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg shadow-md overflow-hidden w-full md:max-w-4xl">
       <div className="flex relative">
         <div className="w-1.5 bg-orange-500"></div>
 
         {/* Main content */}
         <div className="flex-1 p-6">
-          <div className="grid grid-cols-4 gap-10 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 items-center">
             {/* Left section - Flight times and route */}
             <div className="col-span-2  flex justify-center gap-6 items-center">
             <div className="w-1/2 h-full flex flex-col justify-center items-center">
@@ -101,7 +101,7 @@ export default function DetailsTikte() {
                 </div>
               </div>
             </div>
-            <div>
+            <div className='md:block hidden'>
                 <ResponsiveSVG/>
             </div>
           </div>
@@ -110,7 +110,7 @@ export default function DetailsTikte() {
     </div>
     <div className='mt-5 py-5 px-4'>
       <span className="text-gray-500 w-full text-sm">Departure and arrival times are shown in local time</span>
-      <div className='flex justify-end py-2'>
+      <div className='flex md:justify-end justify-center py-2'>
               <button className="px-4 py-2 bg-orange-500 font-bold w-40 text-white rounded-md hover:bg-orange-600 transition" >
                      Select
              </button>

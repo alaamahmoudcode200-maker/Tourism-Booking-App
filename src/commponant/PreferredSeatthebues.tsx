@@ -1,121 +1,170 @@
-'use client';
+"use client"
+import { useState } from "react";
 
-import { useState } from 'react';
+import { Info } from "lucide-react";
 
-export default function PreferredSeatBuses() {
-  // حالة اختيار المقاعد
-  const [selectedSeats, setSelectedSeats] = useState<number[]>([]);
+interface SeatData {
+  id: string;
+  row: number;
+  column: 'A' | 'B' | 'C' | 'D';
+  isReserved: boolean;
+  isSelected: boolean;
+}
 
-  // دالة لتحديد/إلغاء تحديد المقعد
-  const toggleSeat = (seat: number) => {
-    if (selectedSeats.includes(seat)) {
-      // لو كان محدد، ن-cancel
-      setSelectedSeats(selectedSeats.filter(s => s !== seat));
-    } else {
-      // لو مش محدد، ن-add
-      setSelectedSeats([...selectedSeats, seat]);
+const SeatSelector = () => {
+  const [seats, setSeats] = useState<SeatData[]>(() => {
+    const initialSeats: SeatData[] = [];
+    const columns: ('A' | 'B' | 'C' | 'D')[] = ['A', 'B', 'C', 'D'];
+    
+    // Create seats from row 6 to 23
+    for (let row = 6; row <= 23; row++) {
+      columns.forEach((column) => {
+        // All seats available
+        initialSeats.push({
+          id: `${row}${column}`,
+          row,
+          column,
+          isReserved: false,
+          isSelected: false,
+        });
+      });
     }
+    
+    return initialSeats;
+  });
+
+  const exitRows = [13, 18];
+  const pricePerSeat = 84.16;
+
+  const toggleSeat = (seatId: string) => {
+    setSeats(seats.map(seat => {
+      if (seat.id === seatId && !seat.isReserved) {
+        return { ...seat, isSelected: !seat.isSelected };
+      }
+      return seat;
+    }));
   };
 
-  // بيانات المقاعد (مثل المصفوفة الأصلية)
-  const seats = [
-    { row: 6, available: [1, 2], reserved: [3, 4] },
-    { row: 7, available: [1, 2], reserved: [3, 4] },
-    { row: 8, available: [1, 2], reserved: [3, 4] },
-    { row: 9, available: [1, 2], reserved: [3, 4] },
-    { row: 10, available: [1, 2], reserved: [3, 4] },
-    { row: 11, available: [1, 2], reserved: [3, 4] },
-    { row: 12, available: [1, 2], reserved: [3, 4] },
-    { row: 13, available: [1, 2], reserved: [3, 4] },
-    { row: 14, available: [1, 2], reserved: [3, 4] },
-    { row: 15, available: [1, 2], reserved: [3, 4] },
-    { row: 16, available: [1, 2], reserved: [3, 4] },
-    { row: 17, available: [1, 2], reserved: [3, 4] },
-    { row: 18, available: [1, 2], reserved: [3, 4] },
-    { row: 19, available: [1, 2], reserved: [3, 4] },
-    { row: 20, available: [1, 2], reserved: [3, 4] },
-    { row: 21, available: [1, 2], reserved: [3, 4] },
-    { row: 22, available: [1, 2], reserved: [3, 4] },
-    { row: 23, available: [1, 2], reserved: [3, 4] },
-  ];
+  const selectedSeats = seats.filter(s => s.isSelected);
+  const totalPrice = selectedSeats.length * pricePerSeat;
+
+  const getSeatsByRow = (row: number) => {
+    return seats.filter(s => s.row === row).sort((a, b) => {
+      const order = { 'A': 0, 'B': 1, 'C': 2, 'D': 3 };
+      return order[a.column] - order[b.column];
+    });
+  };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-sm">
-      {/* عنوان */}
-      <h2 className="text-xl font-bold text-gray-800 mb-4">Preferred Seat</h2>
-
-      {/* مفتاح الألوان */}
-      <div className="flex items-center gap-4 mb-4">
-        <div className="flex items-center gap-2">
-          <div className="w-4 h-4 bg-orange-500 rounded"></div>
-          <span className="text-sm text-gray-700">Available</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <div className="w-4 h-4 bg-gray-300 rounded"></div>
-          <span className="text-sm text-gray-700">Reserved</span>
-        </div>
-      </div>
-
-      {/* خريطة المقاعد */}
-      <div className="bg-gray-50 p-4 rounded-lg">
-        {seats.map((seatRow, index) => (
-          <div key={index} className="flex justify-between items-center mb-2">
-            {/* أرقام الصفوف */}
-            <div className="text-sm text-gray-700">{seatRow.row}</div>
-
-            {/* المقاعد */}
-            <div className="flex gap-1">
-              {seatRow.available.map((seat) => (
-                <div
-                  key={seat}
-                  onClick={() => toggleSeat(seat)}
-                  className={`w-6 h-6 rounded-md flex items-center justify-center text-xs font-medium cursor-pointer ${
-                    selectedSeats.includes(seat)
-                      ? 'bg-orange-500 text-white border-2 border-orange-400'
-                      : 'bg-orange-500 text-white'
-                  }`}
-                >
-                  {seat}
-                </div>
-              ))}
-              {seatRow.reserved.map((seat) => (
-                <div
-                  key={seat}
-                  className="w-6 h-6 rounded-md flex items-center justify-center text-xs font-medium bg-gray-300 text-gray-800"
-                >
-                  {seat}
-                </div>
-              ))}
+    <div className="min-h-screen bg-background p-4 md:p-8">
+      <div className="md:w-4xl mx-auto">
+        <div className="w-full bg-whit rounded-xl shadow-lg border border-gray-300  p-6">
+          <h1 className="text-2xl font-bold text-foreground mb-6">Preferred Seat</h1>
+          
+          {/* Legend */}
+          <div className="flex items-center gap-6 mb-8">
+            <span className="text-sm font-medium text-foreground">Seat selection:</span>
+            <div className="flex items-center gap-2">
+              <div className="w-5 h-5 rounded bg-orange-400"></div>
+              <span className="text-sm text-muted-foreground">Available</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-5 h-5 rounded bg-gray-400"></div>
+              <span className="text-sm text-muted-foreground">Reserved</span>
             </div>
           </div>
-        ))}
 
-        {/* علامات Exit row */}
-        <div className="mt-4 flex items-center gap-2">
-          <div className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center text-xs text-white">i</div>
-          <span className="text-sm text-gray-700">Exit row</span>
+          {/* Seat Grid */}
+          <div className=" flex justify-center">
+<div className="space-y-2 w-60   border py-3 border-gray-400 rounded-2xl">
+            {Array.from({ length: 18 }, (_, i) => i + 6).map((row) => {
+              const rowSeats = getSeatsByRow(row);
+              const isExitRow = exitRows.includes(row);
+              
+              return (
+                <div key={row} className="flex items-center  justify-center gap-2">
+                  {/* Left seats (A, B) */}
+                  <div className="flex gap-1">
+                    {rowSeats.slice(0, 2).map((seat) => (
+                      <div
+                        key={seat.id}
+                        className={`flex items-center justify-center w-7 h-7 rounded transition-all duration-200 ${
+                          seat.isSelected
+                            ? 'bg-seat-available'
+                            : 'bg-seat-reserved'
+                        }`}
+                      >
+                  
+                        <input 
+                           type="checkbox" 
+                           checked={seat.isSelected} 
+                           onChange={() => toggleSeat(seat.id)} 
+                           disabled={seat.isReserved} 
+                           aria-label={`Seat ${seat.row}${seat.column}`}
+                               className="checkbox bg-gray-300 w-6 text-white checked:bg-orange-500"
+/>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Row number */}
+                  <div className="w-16  text-center">
+                    <span className="text-sm font-medium text-muted-foreground">{row}</span>
+                    {isExitRow && (
+                      <div className="flex items-center justify-center gap-1 mt-1">
+                        <Info className="w-3 h-3 text-muted-foreground" />
+                        <span className="text-xs text-muted-foreground">Exit row</span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Right seats (C, D) */}
+                  <div className="flex gap-1">
+                    {rowSeats.slice(2, 4).map((seat) => (
+                      <div
+                        key={seat.id}
+                        className={`flex items-center justify-center w-7 h-7 rounded transition-all duration-200 ${
+                          seat.isSelected
+                            ? 'bg-seat-available'
+                            : 'bg-seat-reserved'
+                        }`}
+                      >
+                   <input 
+                           type="checkbox" 
+                           checked={seat.isSelected} 
+                           onChange={() => toggleSeat(seat.id)} 
+                           disabled={seat.isReserved} 
+                           aria-label={`Seat ${seat.row}${seat.column}`}
+                               className="checkbox bg-gray-300 text-white checked:bg-orange-500"
+/>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          </div>
+          
+        </div>
+
+        {/* Price Footer */}
+        <div className="mt-6 flex items-center justify-between gap-4">
+          <div>
+            <span className="text-sm text-orange-400">Total Ticket Price</span>
+            <p className="text-2xl font-bold text-orange-500">${totalPrice.toFixed(2)}</p>
+          </div>
+          <button 
+          
+            className="bg-orange-400 text-white hover:bg-orange-400 px-12 py-3 text-lg font-semibold rounded-lg"
+            disabled={selectedSeats.length === 0}
+          >
+            Payment
+          </button>
         </div>
       </div>
-
-      {/* عرض الأرقام المحددة */}
-      <div className="mt-4">
-        <h3 className="text-sm font-medium text-gray-700">Selected Seats:</h3>
-        <p className="text-sm text-gray-600">
-          {selectedSeats.length > 0 ? selectedSeats.join(', ') : 'None'}
-        </p>
-      </div>
-
-      {/* زر الحجز */}
-      <button
-        disabled={selectedSeats.length === 0}
-        className={`mt-4 w-full py-2 rounded-md font-medium ${
-          selectedSeats.length > 0
-            ? 'bg-orange-500 hover:bg-orange-600 text-white'
-            : 'bg-gray-200 text-gray-500 cursor-not-allowed'
-        }`}
-      >
-        Book Selected Seats ({selectedSeats.length})
-      </button>
     </div>
   );
-}
+};
+
+export default SeatSelector;

@@ -26,14 +26,14 @@ export const PreferencesSection: React.FC = () => {
           <div className="text-[14px] font-semibold mb-2">Language</div>
           <div className="space-y-3 mt-2">
             {[
-              { code: 'gb', name: 'English', checked: true },
-              { code: 'sa', name: 'Arabic', checked: false },
-              { code: 'ru', name: 'Russian', checked: false },
-              { code: 'cn', name: 'Chinese', checked: false },
+              { code: 'gb',src:"/gb.png" , name: 'English', checked: true },
+              { code: 'sa',src:"/sa.png" , name: 'Arabic', checked: false },
+              { code: 'ru',src:"/ru.png" , name: 'Russian', checked: false },
+              { code: 'cn',src:"/cn.png" , name: 'Chinese', checked: false },
             ].map((l) => (
               <div key={l.code} className="flex items-center justify-between p-2 rounded-lg">
                 <div className="flex items-center gap-3">
-                  <Image fill src={""} alt={l.name} className="w-8 h-[22px] rounded" />
+                  <Image width={20}  height={20} src={l.src} alt={l.name} className="w-8 h-[22px] rounded" />
                   <span>{l.name}</span>
                 </div>
                 <label className="relative inline-block w-[45px] h-[24px]">

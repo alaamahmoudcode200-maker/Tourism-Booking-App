@@ -8,8 +8,7 @@ import Footer from "@/commponant/footr";
 
 export default function Home() {
   return (
-    <main className="font-sans bg-white grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen gap-16">
-      <Header />
+    <main className="font-sans bg-white  items-center justify-items-center min-h-screen  gap-16 ">     <Header />
       <Hero />
       <NavTabs />
       <SearchByAir/>

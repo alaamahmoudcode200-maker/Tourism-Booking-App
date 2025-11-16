@@ -8,7 +8,7 @@ export default function FormCity() {
 
 
   return (
-     <div className="dropdown dropdown-start ">
+     <div className="dropdown dropdown-center ">
         <div className="">
               <label htmlFor="from" className="block text-gray-400 text-xs mb-1">From</label>
             <div className="flex ">
@@ -19,7 +19,7 @@ export default function FormCity() {
               type="text"
               value="Moscow"
               readOnly
-              className="w-full bg-transparent outline-none font-semibold text-gray-800"
+              className="w-full bg-transparent outline-none text-center font-semibold text-gray-800"
             />
           
             <div tabIndex={0} className="">
@@ -30,7 +30,7 @@ export default function FormCity() {
          
             
               
-             <ul tabIndex={-1} className="dropdown-content menu  rounded-box z-10 w-xl p-2 ">
+             <ul tabIndex={-1} className="dropdown-content menu  rounded-box z-10 w-90 p-2 ">
                   <div className="bg-white rounded-2xl shadow p-4 max-w-xs">
                     {cities.map((city, idx) => (
                     <div key={idx}>

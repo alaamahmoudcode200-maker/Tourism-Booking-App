@@ -37,7 +37,7 @@ export default function OffersSection() {
   };
 
   return (
-    <section className="max-w-7xl mx-auto relative px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <section className="w-full md:max-w-7xl mx-auto relative px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <div className="flex items-center justify-between mb-4 sm:mb-6">
         <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800">Special Offers</h2>
         <div className="flex gap-2">

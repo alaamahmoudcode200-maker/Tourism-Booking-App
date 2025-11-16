@@ -16,7 +16,8 @@ export default function HotelImageGallery() {
       <div className="mb-4">
         <Image
           src={images[0]}
-          fill
+         width={100}
+              height={100}
           alt="Hotel Exterior"
           className="w-full h-[400px] sm:h-[500px] object-cover rounded-lg shadow-md"
         />
@@ -28,9 +29,10 @@ export default function HotelImageGallery() {
           <div key={index} className="aspect-square overflow-hidden rounded-lg shadow-md">
             <Image 
               src={src}
-              fill
+              width={100}
+              height={100}
               alt={`Hotel Image ${index + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full "
             />
           </div>
         ))}

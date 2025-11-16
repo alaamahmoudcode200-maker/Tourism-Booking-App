@@ -13,7 +13,7 @@ export default function Calendar() {
               type="text"
               value="16 Aug"
               readOnly
-              className="w-full bg-transparent outline-none font-semibold text-gray-800"
+              className="w-full bg-transparent outline-none text-center font-semibold text-gray-800"
             />
           
             <div tabIndex={0} className="">

@@ -25,10 +25,21 @@ export default function ApplcationDownload(): React.JSX.Element {
           <p className="text-sm sm:text-base text-gray-600 mt-2 sm:mt-4 max-w-md">
             Embark on a journey like never before with Travila – your ultimate travel companion.
           </p>
-
+          
           {/* أزرار التحميل */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8">
-            <Image 
+          <div className="flex items-center  sm:flex-row gap-3 sm:gap-4 mt-6 sm:mt-8">
+                    {/* صورة الموبايل في الموبايل فقط */}
+        <div className="md:hidden">
+          <Image
+            src="/phone.png"
+            alt="Phone showing Travila app"
+            width={120}
+            height={240}
+            className="rounded-xl "
+          />
+        </div>
+         <div className='grid md:grid-cols-2 items-center gap-1'>
+             <Image 
               src="/googlplay.png" 
               alt="Get it on Google Play" 
               width={120} 
@@ -40,13 +51,14 @@ export default function ApplcationDownload(): React.JSX.Element {
               alt="Download on the App Store" 
               width={120} 
               height={40} 
-              className="hover:scale-105 transition w-[120px] h-[40px] sm:w-[140px] sm:h-[45px] lg:w-[150px] lg:h-[50px]" 
+              className="hover:scale-105   transition w-[120px] h-[40px] sm:w-[140px] sm:h-[45px] lg:w-[150px] lg:h-[50px]" 
             />
+         </div>
           </div>
         </div>
 
         {/* الصور على اليمين - مخفية في الموبايل، ظاهرة في التابلت والكمبيوتر */}
-        <div className="absolute right-0 top-1/2 transform -translate-y-1/2 hidden sm:block">
+        <div className="absolute right-0 top-1/2  transform -translate-y-1/2 hidden sm:block">
           {/* لابتوب */}
           <div className="relative -rotate-6">
             <Image
@@ -59,7 +71,7 @@ export default function ApplcationDownload(): React.JSX.Element {
           </div>
 
           {/* جوال */}
-          <div className="absolute top-[-60px] left-[-80px] rotate-12">
+          <div className="absolute top-[-60px] -left-40 rotate-0">
             <Image
               src="/phone.png"
               alt="Phone showing Travila app"
@@ -70,16 +82,7 @@ export default function ApplcationDownload(): React.JSX.Element {
           </div>
         </div>
 
-        {/* صورة الموبايل في الموبايل فقط */}
-        <div className="absolute right-4 top-1/2 transform -translate-y-1/2 sm:hidden">
-          <Image
-            src="/phone.png"
-            alt="Phone showing Travila app"
-            width={120}
-            height={240}
-            className="rounded-xl opacity-80"
-          />
-        </div>
+
 
         {/* الشكل الموجي أسفل الخلفية */}
         <div className="absolute bottom-0 left-0 w-full h-12 sm:h-16 lg:h-20 bg-orange-100 rounded-2xl sm:rounded-3xl lg:rounded-4xl">

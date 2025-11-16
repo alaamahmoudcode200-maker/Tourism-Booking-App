@@ -5,7 +5,7 @@ import FormCity from './form_city';
 export default function SearchByAir() {
 
   return (
-    <section className="mx-auto -mt-10 my-12 max-w-[1000px] px-4 text-center">
+    <section className="mx-auto   my-12 max-w-[1000px] px-4 text-center">
       <div className="mb-5 text-left">
         <h2 className="text-[20px] font-extrabold text-[#E85528] mb-1">
           Where Is Your Next Dream Place?
@@ -16,38 +16,38 @@ export default function SearchByAir() {
       </div>
 
       <div className="bg-white border border-gray-200 rounded-lg  shadow-md">
-        <form className="flex flex-row items-stretch">
+        <form className="md:flex  flex-row items-stretch ">
           {/* From */}
-          <div className="flex-1 px-4 py-3 text-sm text-gray-800 border-r border-gray-100">
+          <div className="flex-1 px-4 py-3 text-sm text-gray-800 md:border-r border-gray-100">
             <FormCity/>
           </div>
 
           {/* To */}
-          <div className="flex-1 px-4 py-3 text-sm text-gray-800 border-r border-gray-100">
-            <label htmlFor="to" className="block text-gray-400 text-xs mb-1">To</label>
+          <div className="flex-1 px-4 py-3 text-sm text-gray-800 md:border-r border-gray-100">
+            <label htmlFor="to" className="text-start text-gray-400 text-xs mb-1">To</label>
             <input
               id="to"
               type="text"
               value="Sochi"
               readOnly
-              className="w-full bg-transparent outline-none font-semibold text-gray-800"
+              className="w-full bg-transparent outline-none text-center font-semibold text-gray-800"
             />
           </div>
 
           {/* When */}
-          <div className="flex-1 px-4 py-3 text-sm text-gray-800 border-r border-gray-100">
+          <div className="flex-1 px-4 py-3 text-sm text-gray-800 md:border-r border-gray-100">
              <Calendar />
           </div>
 
           {/* Back */}
-          <div className="flex-1 px-4 py-3 text-sm text-gray-800 border-r border-gray-100">
+          <div className="flex-1 px-4 py-3 text-sm text-gray-800 md:border-r border-gray-100">
             <label htmlFor="back" className="block text-gray-400 text-xs mb-1">Back</label>
             <input
               id="back"
               type="text"
               value="22 Aug"
               readOnly
-              className="w-full bg-transparent outline-none font-semibold text-gray-800"
+              className="w-full bg-transparent outline-none text-center font-semibold text-gray-800"
             />
           </div>
 
@@ -59,7 +59,7 @@ export default function SearchByAir() {
           {/* Find flights button */}
           <button
             type="submit"
-            className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-r-lg transition-colors duration-200 flex items-center justify-center"
+            className="bg-orange-500 hover:bg-orange-600 text-white font-semibold  px-6 py-3 w-full md:flex-1 rounded md:rounded-r-lg transition-colors duration-200 flex items-center justify-center"
           >
             Find flights
           </button>

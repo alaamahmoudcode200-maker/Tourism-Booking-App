@@ -69,10 +69,10 @@ export default function StepsWorke() {
       />
 
       {/* محتوى فوق الصورة -> z-index أعلى */}
-      <div className="max-w-7xl mx-auto relative z-10 flex flex-col lg:flex-row items-start gap-8 sm:gap-12 lg:gap-16">
+      <div className="w-full md:max-w-6xl mx-auto relative z-10 flex flex-col lg:flex-row items-start gap-8 sm:gap-12 lg:gap-16">
         {/* Left images */}
-        <div className="steps-left flex-1 flex flex-col items-center gap-4 sm:gap-6">
-          <div className="w-full max-w-[300px] sm:max-w-[380px] lg:max-w-[420px] rounded-xl sm:rounded-2xl lg:rounded-[25px] overflow-hidden shadow-lg">
+        <div className=" flex-1 flex justify-center flex-col items-center gap-4 sm:gap-6">
+          <div className="w-full ml-10 max-w-[300px] sm:max-w-[380px] lg:max-w-[420px] rounded-xl sm:rounded-2xl lg:rounded-[25px] overflow-hidden shadow-lg">
             <Image  src="/pepole.png" alt="people" width={420} height={420} className="w-full h-auto object-cover" />
           </div>
 

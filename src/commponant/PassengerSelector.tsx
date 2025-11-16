@@ -22,7 +22,7 @@ export default function PassengerSelector() {
   };
 
   return (
-     <div className="dropdown dropdown-end ">
+     <div className="dropdown dropdown-center md:dropdown-end ">
             <label htmlFor="passengers" className="block text-gray-400 text-xs mb-1">Who&apos;s Flying?</label>
              <div className="flex">
                  <input
@@ -30,7 +30,7 @@ export default function PassengerSelector() {
               type="text"
               value="1 Adults, 3 Child"
               readOnly
-              className="w-full bg-transparent outline-none font-semibold text-gray-800"
+              className="w-full bg-transparent text-center outline-none font-semibold text-gray-800"
             />
             <div tabIndex={0} className="">
                  x
