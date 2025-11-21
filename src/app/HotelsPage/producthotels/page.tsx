@@ -4,6 +4,8 @@ import NavTabs from '@/commponant/nave';
 import HotelSearch from '@/commponant/search';
 import CardHotels from "@/commponant/card"
 import ApplcationDownload from '@/commponant/applcation';
+import ScrollToTopButton from "@/commponant/ScrollToTopButton";
+import FadeInFromRight from "@/commponant/anmtionscrol";
 import Footer from '@/commponant/footr';
 export default function HotelsPage() {
   return (
@@ -12,9 +14,10 @@ export default function HotelsPage() {
         <Header />
         <Hero />
         <NavTabs />
-        <HotelSearch />
-        <CardHotels />
-        <ApplcationDownload />
+        <FadeInFromRight delay={0.1}><HotelSearch /></FadeInFromRight>
+        <FadeInFromRight delay={0.2}> <CardHotels /></FadeInFromRight>
+        <FadeInFromRight delay={0.3}><ApplcationDownload /></FadeInFromRight>
+        <ScrollToTopButton />
         <Footer />
     </main>
   );

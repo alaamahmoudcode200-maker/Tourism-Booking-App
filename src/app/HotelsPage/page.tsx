@@ -11,6 +11,9 @@ import StepsWorke from "@/commponant/stapsworke"
 import Testimonials from "@/commponant/clintcomint"
 import PaymentCommponant from "@/commponant/pyment"
 import ApplcationDownload from "@/commponant/applcation"
+import ScrollToTopButton from "@/commponant/ScrollToTopButton";
+import FadeInFromRight from "@/commponant/anmtionscrol";
+
 import Footer from "@/commponant/footr"
 
 export default function Home() {
@@ -19,16 +22,17 @@ export default function Home() {
 
       <Header />
       <Hero />
-      <NavTabs />
-      <HotelSearch />
-      <Stories />
-      <FeaturedTours />
-      <FeaturedHotels />
-      <OffersSection />
-      <StepsWorke />
-      <Testimonials />
-      <PaymentCommponant />
-      <ApplcationDownload />
+       <NavTabs />
+      <FadeInFromRight delay={0.3}><HotelSearch /></FadeInFromRight>
+      <FadeInFromRight delay={0.4}><Stories /></FadeInFromRight>
+      <FadeInFromRight delay={0.5}><FeaturedTours /></FadeInFromRight>
+      <FadeInFromRight delay={0.6}><FeaturedHotels /></FadeInFromRight>
+      <FadeInFromRight delay={0.7}><OffersSection /></FadeInFromRight>
+      <FadeInFromRight delay={0.8}><StepsWorke /></FadeInFromRight>
+      <FadeInFromRight delay={0.9}><Testimonials /></FadeInFromRight>
+      <FadeInFromRight delay={1}><PaymentCommponant /></FadeInFromRight>
+      <FadeInFromRight delay={1.1}><ApplcationDownload /></FadeInFromRight>
+      <ScrollToTopButton />
       <Footer />
     </main>
   );

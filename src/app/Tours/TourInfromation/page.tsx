@@ -4,6 +4,8 @@ import NavTabs from "@/commponant/nave";
 import ApplcationDownload from "@/commponant/applcation";
 import InfromationTour from "@/commponant/InfromationTour";
 import SearchByAir from "@/commponant/saerchByair";
+import ScrollToTopButton from "@/commponant/ScrollToTopButton";
+import FadeInFromRight from "@/commponant/anmtionscrol";
 import Footer from "@/commponant/footr";
 
 export default function Home() {
@@ -11,9 +13,10 @@ export default function Home() {
     <main className="font-sans bg-white  items-center justify-items-center min-h-screen  gap-16 ">     <Header />
       <Hero />
       <NavTabs />
-      <SearchByAir/>
-      <InfromationTour/>
-      <ApplcationDownload />
+        <FadeInFromRight delay={0.1}><SearchByAir/></FadeInFromRight>
+        <FadeInFromRight delay={0.2}><InfromationTour/></FadeInFromRight>
+        <FadeInFromRight delay={0.3}><ApplcationDownload /></FadeInFromRight>
+      <ScrollToTopButton />
       <Footer />
     </main>
   );

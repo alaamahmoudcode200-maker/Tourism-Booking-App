@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import React from 'react';
-
+import TiltWrapper from './testanmation';
 interface Hotel {
   id: number;
   name: string;
@@ -64,6 +64,7 @@ export default function SearchResultCards() {
   return (
     <div className="space-y-6">
       {hotels.map((hotel) => (
+         <TiltWrapper key={hotel.id}>
         <div
           key={hotel.id}
           className="bg-white rounded-xl shadow-sm p-4 flex flex-col md:flex-row gap-4"
@@ -144,6 +145,7 @@ export default function SearchResultCards() {
           
           </div>
         </div>
+        </TiltWrapper>
       ))}
     </div>
   );

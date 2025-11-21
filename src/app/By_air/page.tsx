@@ -4,8 +4,9 @@ import NavTabs from "../../commponant/nave";
 import SearchByAir from "@/commponant/saerchByair";
 import ApplcationDownload from "../../commponant/applcation";
 import SearchFielterTekt from "@/commponant/searchteakt";
-
+import ScrollToTopButton from "@/commponant/ScrollToTopButton";
 import Footer from "../../commponant/footr";
+import FadeInFromRight from "@/commponant/anmtionscrol";
 
 export default function Home() {
   return (
@@ -13,9 +14,10 @@ export default function Home() {
       <Header />
       <Hero />
       <NavTabs />
-      <SearchByAir />
-       <SearchFielterTekt/>
-      <ApplcationDownload />
+      <FadeInFromRight delay={0.1}><SearchByAir /></FadeInFromRight>
+         <FadeInFromRight delay={0.2}><SearchFielterTekt/></FadeInFromRight>
+      <FadeInFromRight delay={0.2}><ApplcationDownload /></FadeInFromRight>
+      <ScrollToTopButton />
       <Footer />
     </main>
   );

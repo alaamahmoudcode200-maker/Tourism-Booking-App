@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { FaRegHeart, FaMoon, FaUser } from 'react-icons/fa';
 import Image from 'next/image';
+import TiltWrapper from './testanmation';
 
 // تعريف نوع الجولة (Tour)
 interface Tour {
@@ -59,7 +60,7 @@ export default function FeaturedTours() {
   };
 
   return (
-    <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+    <section className=" max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
       <div className="flex sm:flex-row items-start sm:items-center justify-between mb-4 sm:mb-6 gap-2 sm:gap-4">
         <h2 className="text-xl sm:text-2xl lg:text-3xl text-black font-bold">Our Featured Tours</h2>
         <a href="#" className="text-sm font-medium text-gray-900 hover:text-orange-600 transition">
@@ -72,6 +73,7 @@ export default function FeaturedTours() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
         {tours.map((t) => (
+           <TiltWrapper  key={t.id}>
           <article
             key={t.id}
             className="group relative w-full max-w-sm mx-auto sm:max-w-none bg-white border border-gray-100 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm transition-transform duration-400 hover:-translate-y-2 hover:shadow-lg"
@@ -124,6 +126,7 @@ export default function FeaturedTours() {
               </div>
             </div>
           </article>
+          </TiltWrapper>
         ))}
       </div>
     </section>

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { FaRegHeart, FaMoon, FaUser } from "react-icons/fa";
 import Image from "next/image";
-
+import TiltWrapper from './testanmation';
 interface TourBadge {
   text: string;
   color: string;
@@ -115,10 +115,11 @@ export default function CardHotelsTours() {
   return (
     <section className=" grid grid-cols-1 mx-auto px-5 py-8">
    
-      <div className="grid grid-cols-1 ml-15 gap-6 lg:grid-cols-2 ">
+      <div className="grid grid-cols-1  md:grid-cols-2 lg:ml-15 gap-6 lg:grid-cols-2 ">
         {tours.map((t) => (
+           <TiltWrapper   key={t.id}>
           <article
-            key={t.id}
+            
             className="group relative  h-[450]   md:w-[300px] w-[380] border border-gray-100 rounded-[20px] overflow-hidden shadow-sm transition-transform duration-400 hover:-translate-y-2 hover:shadow-lg"
           >
             <div className=" h- overflow-hidden">
@@ -148,7 +149,7 @@ export default function CardHotelsTours() {
                 <button className="px-4 py-2 bg-[#E85528] text-white rounded-md font-semibold hover:bg-[#c9441e]">Book Now</button>
               </div>
             </div>
-          </article>
+          </article></TiltWrapper>
           
         ))}
       </div>

@@ -1,7 +1,14 @@
 'use client';
-
+import { Info } from "lucide-react";
 import { useState } from 'react';
 import { HiArrowNarrowDown,HiArrowNarrowUp  } from "react-icons/hi";
+interface SeatData {
+  id: string;
+  row: number;
+  column: 'A' | 'B' | 'C' | 'D';
+  isReserved: boolean;
+  isSelected: boolean;
+}
 export default function SeatSelector() {
   // حالة اختيار المقاعد (مصفوفة من الأرقام المحددة)
   const [selectedSeats, setSelectedSeats] = useState<number[]>([17]); // مثال: 17 محدد من البداية
@@ -48,9 +55,54 @@ export default function SeatSelector() {
     [124, 97, 99, 109, 111],
     [33, 35, 39,86, 90, 94],
   ];
+  
+
+    const [seats, setSeats] = useState<SeatData[]>(() => {
+    const initialSeats: SeatData[] = [];
+    const columns: ('A' | 'B' | 'C' | 'D')[] = ['A', 'B', 'C', 'D'];
+    
+    // Create seats from row 6 to 23
+    for (let row = 6; row <= 23; row++) {
+      columns.forEach((column) => {
+        // All seats available
+        initialSeats.push({
+          id: `${row}${column}`,
+          row,
+          column,
+          isReserved: false,
+          isSelected: false,
+        });
+      });
+    }
+    
+    return initialSeats;
+  });
+
+  const exitRows = [13, 18];
+  const pricePerSeat = 84.16;
+
+  const toggleSeat2 = (seatId: string) => {
+    setSeats(seats.map(seat => {
+      if (seat.id === seatId && !seat.isReserved) {
+        return { ...seat, isSelected: !seat.isSelected };
+      }
+      return seat;
+    }));
+  };
+
+
+  const totalPrice = selectedSeats.length * pricePerSeat;
+
+  const getSeatsByRow = (row: number) => {
+    return seats.filter(s => s.row === row).sort((a, b) => {
+      const order = { 'A': 0, 'B': 1, 'C': 2, 'D': 3 };
+      return order[a.column] - order[b.column];
+    });
+  };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-sm">
+    <div>
+       <div className="max-w-4xl hidden lg:block mx-auto p-6 bg-white rounded-lg shadow-sm overflow-scroll">
       {/* عنوان */}
 
         <div className="flex justify-between items-start gap-4 mt-2">
@@ -73,9 +125,9 @@ export default function SeatSelector() {
         </div>
  
       </div>
-      <div className="w-full bg-gray-50 rounded-lg p-2">
+      <div className="w-full bg-gray-50 rounded-lg p-2 overflow-scroll">
         {/* الصف الأول */}
-        <div className="grid grid-cols-7 gap-5 mb-2">
+        <div className="grid grid-cols-7 gap-10 md:gap-5 mb-2">
             <div className=' col-span-2'>
                <div className="grid grid-cols-6 ">
             {seatRows[0].map((seat) => (
@@ -500,5 +552,101 @@ export default function SeatSelector() {
 
   
     </div>
+      <div className=" block lg:hidden mt-10 bg-background p-4 md:p-8">
+      <div className="md:w-4xl mx-auto">
+        <div className="w-full bg-whit rounded-xl shadow-lg border border-gray-300  p-6">
+        
+          {/* Seat Grid */}
+          <div className=" flex justify-center">
+           <div className="space-y-2 w-60   border py-3 border-gray-400 rounded-2xl">
+            {Array.from({ length: 10 }, (_, i) => i + 6).map((row) => {
+              const rowSeats = getSeatsByRow(row);
+              const isExitRow = exitRows.includes(row);
+              
+              return (
+                <div key={row} className="flex items-center  justify-center gap-2">
+                  {/* Left seats (A, B) */}
+                  <div className="flex gap-1">
+                    {rowSeats.slice(0, 2).map((seat) => (
+                      <div
+                        key={seat.id}
+                        className={`flex items-center justify-center w-7 h-7 rounded transition-all duration-200 ${
+                          seat.isSelected
+                            ? 'bg-seat-available'
+                            : 'bg-seat-reserved'
+                        }`}
+                      >
+                  
+                        <input 
+                           type="checkbox" 
+                           checked={seat.isSelected} 
+                           onChange={() => toggleSeat2(seat.id)} 
+                           disabled={seat.isReserved} 
+                           aria-label={`Seat ${seat.row}${seat.column}`}
+                               className="checkbox bg-gray-300 w-6 text-white checked:bg-orange-500"
+/>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Row number */}
+                  <div className="w-16  text-center">
+                    <span className="text-sm font-medium text-muted-foreground">{row}</span>
+                    {isExitRow && (
+                      <div className="flex items-center justify-center gap-1 mt-1">
+                        <Info className="w-3 h-3 text-muted-foreground" />
+                        <span className="text-xs text-muted-foreground">Exit row</span>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Right seats (C, D) */}
+                  <div className="flex gap-1">
+                    {rowSeats.slice(2, 4).map((seat) => (
+                      <div
+                        key={seat.id}
+                        className={`flex items-center justify-center w-7 h-7 rounded transition-all duration-200 ${
+                          seat.isSelected
+                            ? 'bg-seat-available'
+                            : 'bg-seat-reserved'
+                        }`}
+                      >
+                   <input 
+                           type="checkbox" 
+                           checked={seat.isSelected} 
+                           onChange={() => toggleSeat2(seat.id)} 
+                           disabled={seat.isReserved} 
+                           aria-label={`Seat ${seat.row}${seat.column}`}
+                               className="checkbox bg-gray-300 text-white checked:bg-orange-500"
+/>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          </div>
+          
+        </div>
+
+        {/* Price Footer */}
+        <div className="mt-6 flex items-center justify-between gap-4">
+          <div>
+            <span className="text-sm text-orange-400">Total Ticket Price</span>
+            <p className="text-2xl font-bold text-orange-500">${totalPrice.toFixed(2)}</p>
+          </div>
+          <button 
+          
+            className="bg-orange-400 text-white hover:bg-orange-400 px-12 py-3 text-lg font-semibold rounded-lg"
+            disabled={selectedSeats.length === 0}
+          >
+            Payment
+          </button>
+        </div>
+      </div>
+    </div>
+    </div>
+   
   );
 }

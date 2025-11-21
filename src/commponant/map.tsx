@@ -2,12 +2,12 @@
 
 export default function CityCard() {
   return (
-    <div className=" w-full px-20  mx-auto">
+    <div className="w-full lg:w-6xl   mx-auto">
    
-      <div className="bg-white p-6 rounded-lg shadow-sm  max-w-3/3 flex flex-col md:flex-row gap-6">
+      <div className="bg-white p-6 rounded-lg shadow-sm  md:max-w-full flex flex-col md:flex-row gap-6">
 
         {/* الخريطة على اليسار (iframe) */}
-        <div className="md:w-1/3 relative">
+        <div className="w-full md:w-1/3 relative">
           {/* iframe خريطة جوجل */}
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d198765.5861949775!2d11.920592599999999!3d57.7088572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464ff3b87c54e751%3A0x344740921276984!2sGothenburg%2C%20Sweden!5e0!3m2!1sen!2sus!4v1720000000000!5m2!1sen!2sus"

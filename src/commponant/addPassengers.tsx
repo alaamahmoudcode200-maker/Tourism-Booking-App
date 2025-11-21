@@ -8,6 +8,7 @@ export default function PassengerForm() {
   
 
   return (
+    
     <div className="max-w-6xl mx-auto text-black bg-white rounded-xl shadow-sm p-8">
       {/* Passengers Selector */}
       <h2 className="text-lg font-bold text-gray-800 mb-4">Passengers</h2>

@@ -9,9 +9,9 @@ import 'swiper/css/navigation';
 export default function SwipRoom() {
   return (
     <div className="relative  w-full max-w-5xl mx-auto">
-        <div>
+        <div className='px-5'>
             <h2 className="text-xl font-bold text-black mb-4">Superior room, 30 m²</h2>
-            <div className="absolute top-0 right-0 transform -translate-y-1/2 z-10">
+            <div className="absolute top-3 md:top-0 right-2 md:right-0 transform -translate-y-1/2 z-10">
         <button className="custom-prev bg-gray-300 rounded-full shadow-md hover:bg-gray-100">
          <FaArrowLeft className="text-black m-2"/>
         </button>   

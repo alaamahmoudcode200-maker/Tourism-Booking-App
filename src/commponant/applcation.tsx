@@ -5,9 +5,10 @@ import React from 'react';
 
 export default function ApplcationDownload(): React.JSX.Element {
   return (
+    
     <div className="bg-orange-50 py-8 sm:py-12 lg:py-16 w-full px-4 sm:px-6 lg:px-8">
       {/* القسم الرئيسي */}
-      <div className="max-w-6xl mx-auto min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] bg-orange-100 rounded-2xl sm:rounded-3xl lg:rounded-4xl p-4 sm:p-6 md:p-8 lg:p-12 relative overflow-hidden">
+      <div className="md:w-full lg:max-w-6xl mx-auto min-h-[400px] sm:min-h-[500px] lg:min-h-[600px] bg-orange-100 rounded-2xl sm:rounded-3xl lg:rounded-4xl p-4 sm:p-6 md:p-8 lg:p-12 relative overflow-hidden">
 
         {/* المحتوى النصي */}
         <div className="w-full lg:w-1/2 space-y-4 sm:space-y-6 z-10 relative">

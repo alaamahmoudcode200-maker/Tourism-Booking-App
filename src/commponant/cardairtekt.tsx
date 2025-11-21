@@ -62,7 +62,7 @@ export default function FlightDetailCard() {
   ];
 
   return (
-    <div className="max-w-4xl mx-auto p-4 space-y-6">
+    <div className="w-full  mx-auto p-4 space-y-6">
 
       {flights.map((flight) => (
         <div key={flight.id} className="flex items-start sm:items-center">
@@ -71,7 +71,7 @@ export default function FlightDetailCard() {
           <div className="w-2 h-full bg-orange-500 rounded-l-lg ml-2 "></div>
 
           {/* Card */}
-          <div className="flex-1 flex flex-col lg:flex-row justify-between border border-gray-300 rounded md:rounded-r-lg p-4 gap-6">
+          <div className="flex-1 md:w-full flex flex-col md:flex-row justify-between border border-gray-300 rounded md:rounded-r-lg p-4 gap-6">
 
             {/* LEFT SIDE (Time + Duration) */}
             <div className="flex flex-col sm:flex-row justify-between flex-1 gap-6 border-b sm:border-b-0 sm:border-r border-gray-300 pb-4 sm:pb-0 sm:pr-4">

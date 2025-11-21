@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { FaRegHeart, FaMoon, FaUser } from 'react-icons/fa';
 import Image from 'next/image';
+import TiltWrapper from './testanmation';
 
 // تعريف نوع الـ Tour
 interface Tour {
@@ -72,9 +73,10 @@ export default function FeaturedHotels() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
         {tours.map((t) => (
+           <TiltWrapper   key={t.id}>
           <article
-            key={t.id}
-            className="group relative w-full max-w-sm mx-auto sm:max-w-none bg-white border border-gray-100 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm transition-transform duration-400 hover:-translate-y-2 hover:shadow-lg"
+          
+            className="group cursor-pointer relative w-full max-w-sm mx-auto sm:max-w-none bg-white border border-gray-100 rounded-xl sm:rounded-2xl overflow-hidden shadow-sm transition-transform duration-400 hover:-translate-y-2 hover:shadow-lg"
           >
             <div className="relative h-[200px] sm:h-[240px] overflow-hidden">
               <Image
@@ -124,6 +126,7 @@ export default function FeaturedHotels() {
               </div>
             </div>
           </article>
+          </TiltWrapper>
         ))}
       </div>
     </section>

@@ -65,10 +65,10 @@ const FlightFilters = () => {
   ];
 
   return (
-    <div className="w-80 mx-auto p-6 bg-white rounded-lg ">
-  <details className="dropdown dropdown-right md:hidden">
+    <div className="w-80  mx-auto p-6 bg-white rounded-lg ">
+  <details className="dropdown dropdown-right  lg:hidden" style={{marginLeft:"-216px"}}>
   <summary className="bg-white shadow border border-gray-300 rounded-xl px-4 py-2 ">Filters</summary>
-  <ul className="menu dropdown-content md:hidden bg-base-100 rounded-box z-1 w-52 p-2 ">
+  <ul className="menu dropdown-content bg-base-100 rounded-box z-20 w-52 p-2 ">
  <div className="w-60 md:w-80 mx-auto p-6 bg-white rounded-lg shadow-sm">
              {/* Departure Time */}
       <div className="mb-6">
@@ -244,7 +244,7 @@ const FlightFilters = () => {
        </div>
   </ul>
 </details>
-       <div className="w-80 hidden  md:block mx-auto p-6 bg-white rounded-lg shadow-sm">
+       <div className="w-80 hidden  lg:block mx-auto p-6 bg-white rounded-lg shadow-sm">
              {/* Departure Time */}
       <div className="mb-6">
         <h3 className="text-sm font-medium text-gray-800 mb-2">Departure time</h3>

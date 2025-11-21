@@ -97,7 +97,7 @@ export default function PropertyDetails() {
              </div>
 
       {/* Amenities */}
-      <div className="my-8 flex  gap-6">
+      <div className="my-8 grid grid-cols-1 md:grid-cols-2  gap-6">
         <div>
          <h3 className="font-bold text-black text-lg mb-4">Amenities</h3>
         <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
@@ -110,13 +110,13 @@ export default function PropertyDetails() {
         </div>
         </div>
       
-         <div className="flex flex-col md:flex-row justify-center ml-10  items-start gap-6">
+         <div className="flex flex-col md:flex-row justify-center md:ml-10  items-start gap-6">
         <div>
           <div className="flex items-center text-black gap-2 text-lg font-medium">
             <span>2 Adults, 3 Children, 4 Nights</span>
-            <span className="text-gray-500">| Two Rooms • Double Bed</span>
+            <span className="text-gray-500 ml-4">| Two Rooms • Double Bed</span>
           </div>
-          <div className="flex items-center gap-2 mt-2 text-sm text-gray-600">
+          <div className="flex items-center gap-2 mt-2  text-sm text-gray-600">
             <FaMapMarkerAlt size={16} className="text-orange-600" />
             <span>Lövågatan 22, Stockholm, Sweden</span>
           </div>

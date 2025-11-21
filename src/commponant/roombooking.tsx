@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import React from 'react';
-
+import TiltWrapper from './testanmation';
 interface ImageData {
   id: number;
   src: string;
@@ -40,13 +40,14 @@ export default function RoomBooking() {
      {id: 2, src: '/room2.jpg', alt: 'Room Image 2'},
      {id: 3, src: '/room3.jpg', alt: 'Room Image 3'},
      {id: 4, src: '/room.jpg', alt: 'Room Image 4'}, 
-     {id: 5, src: '/room.jpg', alt: 'Room Image 5'}, 
+  
   ];
 
   // إنشاء عناصر الصور        
   const imglist = images.map((image) => ( 
+    <TiltWrapper key={image.id}>
         <Image
-            key={image.id}
+            
             src={image.src}
             alt={image.alt}
             width={200}
@@ -54,6 +55,8 @@ export default function RoomBooking() {
             style={{ width: '200px', height: '200px' }}
             className=" rounded object-cover"
         />
+    </TiltWrapper>
+      
     )); 
   const roomData: RoomData = {
     title: 'Superior room, 30 m²',
@@ -78,7 +81,8 @@ export default function RoomBooking() {
       {/* سلايدر الصور */}
       <div className=" mb-6">
         {/* الصورة الحالية */}
-        <div className="grid grid-cols-5 px-2 rounded-lg gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 px-2 rounded-lg gap-5">
+          
          {imglist}
         </div>
 

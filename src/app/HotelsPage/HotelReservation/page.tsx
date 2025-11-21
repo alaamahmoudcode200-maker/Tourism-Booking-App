@@ -3,7 +3,9 @@ import Hero from '@/commponant/heroseaction';
 import NavTabs from '@/commponant/nave';
 import HotelSearch from '@/commponant/search';
 import BookingConfirmation from '@/commponant/BookingConfirmation';
+import ScrollToTopButton from "@/commponant/ScrollToTopButton";
 import ApplcationDownload from '@/commponant/applcation';
+import FadeInFromRight from "@/commponant/anmtionscrol";
 import Footer from '@/commponant/footr';
 export default function SearchHotelsPage() {
   return (
@@ -12,9 +14,10 @@ export default function SearchHotelsPage() {
         <Header />
         <Hero />
         <NavTabs />
-        <HotelSearch />
-        <BookingConfirmation />
-        <ApplcationDownload />
+       <FadeInFromRight delay={0.1}><HotelSearch /></FadeInFromRight>
+        <FadeInFromRight delay={0.1}><BookingConfirmation /></FadeInFromRight>
+        <FadeInFromRight delay={0.1}><ApplcationDownload /></FadeInFromRight>
+        <ScrollToTopButton />
         <Footer />
     </main>
   );

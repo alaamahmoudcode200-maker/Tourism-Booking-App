@@ -86,17 +86,17 @@ export default function BookingConfirmation() {
             fill
             className="object-cover"
           />
-          <div className="absolute mb-70 mr-180 inset-0  bg-opacity-30 flex items-center justify-center">
+          <div className="absolute  mb-70 lg:mr-180 inset-0  bg-opacity-30 flex items-center justify-center">
             <div className="text-black text-center px-4">
               <h2 className="text-2xl font-bold">Booking No. {bookingData.bookingNumber} Details</h2>
               <p className="mt-1">Check Your Information Here !</p>
             </div>
           </div>
              {/* Hotel Rules */}
-        <div className="p-4 absolute mt-70 inset-0 bg-gradient-to-t from-black  to-transparent  text-black bg-opacity-30   border-b border-gray-200">
+        <div className="p-4 absolute mt-50 lg:mt-70 inset-0 bg-gradient-to-t from-black  to-transparent  text-black bg-opacity-30   border-b border-gray-200">
           <div className=" text-sm text-white  p-4 rounded-md">
             <span><strong>Hotel Roles</strong></span>
-            <div className="flex justify-between gap-1 mt-2">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-5 mt-2">
             {bookingData.hotelRules.map((rule, i) => (
               <span key={i}>{rule}</span>
             ))}

@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { FaRegHeart, FaMoon, FaUser } from "react-icons/fa";
 import Image from "next/image";
-
+import TiltWrapper from './testanmation';
 interface TourBadge {
   text: string;
   color: string;
@@ -113,13 +113,14 @@ export default function CardHotels() {
   };
 
   return (
-    <section className="max-w-[1150px] - mx-auto px-5 py-12">
+    <section className="max-w-[1150px]  mx-auto px-5 py-12">
    
-      <div className="grid grid-cols-1 -ml-8 gap-16 md:grid-cols-3 ">
+      <div className="grid grid-cols-1 -ml-4 lg:-ml-15 gap-10 lg:gap-20 md:grid-cols-2 lg:grid-cols-3 ">
         {tours.map((t) => (
+            <TiltWrapper   key={t.id}>
           <article
             key={t.id}
-            className="group relative h-full  w-[380px] border border-gray-100 rounded-[20px] overflow-hidden shadow-sm transition-transform duration-400 hover:-translate-y-2 hover:shadow-lg"
+            className="group relative h-full   w-[360px] border border-gray-100 rounded-[20px] overflow-hidden shadow-sm transition-transform duration-400 hover:-translate-y-2 hover:shadow-lg"
           >
             <div className="relative h-[240px] overflow-hidden">
               <Image src={t.image} alt={t.title} width={380} height={240} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.05]" />
@@ -148,7 +149,7 @@ export default function CardHotels() {
                 <button className="px-4 py-2 bg-[#E85528] text-white rounded-md font-semibold hover:bg-[#c9441e]">Book Now</button>
               </div>
             </div>
-          </article>
+          </article></TiltWrapper>
         ))}
       </div>
     </section>

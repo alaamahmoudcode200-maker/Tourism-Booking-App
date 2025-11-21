@@ -9,8 +9,8 @@ export default function CardPay() {
         const [cardHolder, setCardHolder] = useState('');
   return (
 
-  <div className=" max-w-4xl bg-white">
-    <div className="grid grid-cols-1 items-center md:grid-cols-2 text-black  gap-6 ">
+  <div className="  lg:max-w-4xl bg-white">
+    <div className="grid grid-cols-1 items-center lg:grid-cols-2 text-black  gap-6 ">
       {/* Payment Details */}
         <div className="max-w-full mx-auto p-6">
       {/* عنوان النموذج */}
@@ -67,7 +67,7 @@ export default function CardPay() {
         className="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
         </div>
-        <div className="max-w-full mx-auto p-2">
+        <div className="max-w-full flex justify-center mx-auto ">
       {/* بطاقة المعاينة */}
       <div className="relative w-80 bg-gradient-to-br from-amber-500 via-orange-500 to-orange-500 rounded-xl shadow-lg p-6 text-white">
         {/* شريحة (Chip) */}

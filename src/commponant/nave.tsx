@@ -12,7 +12,7 @@ export default function NavTabs() {
   return (
     <div className="relative w-full  -mt-10  md:-mt-20 h-20 sm:h-24 md:h-32">
       {/* Nav Tabs */}
-      <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 w-[100%] sm:w-4/5 md:w-2/3 px-2 sm:px-4 md:px-5">
+      <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 w-full lg:w-3/4  sm:w-4/5 md:w-3/3 px-2 sm:px-4 md:px-5">
         <div className="bg-white shadow-sm rounded-lg sm:rounded-xl p-3 sm:p-4 flex gap-4 sm:gap-6 md:gap-10 overflow-x-auto sm:justify-center hide-scrollbar">
           {NavTabs.map((tab) => {
             const Icon = tab.icon;

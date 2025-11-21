@@ -1,6 +1,9 @@
+import Image from 'next/image';
+import { IoCallOutline } from "react-icons/io5";
+import { LuMessagesSquare } from "react-icons/lu";
 export default function CustomerServicePage() {
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10">
+    <div className="max-w-5xl mx-auto px-4 py-10">
 
       {/* CUSTOMER SERVICE TITLE */}
       <div className="text-center mb-10">
@@ -9,20 +12,28 @@ export default function CustomerServicePage() {
       </div>
 
       {/* CONTACT BOXES */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-12">
         
         {/* Call Us */}
-        <div className="bg-orange-50 border border-orange-100 rounded-xl p-6 flex items-start space-x-4 shadow-sm">
-          <div className="text-orange-500 text-3xl">📞</div>
+        <div className="col-span-2 bg-orange-50 border border-orange-100 rounded-xl p-6 flex items-start space-x-4 shadow-sm">
+          <div className="text-orange-500 text-3xl"><IoCallOutline/></div>
           <div>
             <h3 className="font-semibold text-orange-600">Call Us</h3>
             <p className="text-gray-600 mt-1">005684434464643</p>
           </div>
         </div>
-
+          <div className="flex justify-center">
+          <Image
+             width={250}
+             height={100}
+            src="/co1.png"
+            alt="Help"
+            style={{width:100, height:100}}
+          />
+        </div>
         {/* Send a Message */}
-        <div className="bg-orange-50 border border-orange-100 rounded-xl p-6 flex items-start space-x-4 shadow-sm">
-          <div className="text-orange-500 text-3xl">📧</div>
+        <div className="col-span-2 bg-orange-50 border border-orange-100 rounded-xl p-6 flex items-start space-x-4 shadow-sm">
+          <div className="text-orange-500 text-3xl"><LuMessagesSquare/></div>
           <div>
             <h3 className="font-semibold text-orange-600">Send Us A Message</h3>
             <p className="text-gray-600 mt-1">Example@gmail.com</p>
@@ -43,7 +54,7 @@ export default function CustomerServicePage() {
               Tell Us What’s Happening And We’ll Guide You Through What To Do Next.
             </p>
           </div>
-
+           
           <div>
             <h3 className="font-semibold text-orange-600 text-lg">Contact us anytime</h3>
             <p className="text-gray-600 text-sm">
@@ -61,8 +72,10 @@ export default function CustomerServicePage() {
 
         {/* IMAGE (replace with your asset) */}
         <div className="flex justify-center">
-          <img
-            src="/help-center-illustration.png"
+          <Image
+             width={350}
+             height={200}
+            src="/co2.png"
             alt="Help"
             className="max-w-[350px] w-full"
           />
@@ -109,6 +122,7 @@ function FAQ() {
           )}
         </details>
       ))}
+      
     </div>
   );
 }

@@ -34,7 +34,7 @@ export default function HotelInfoCard() {
   ];
 
   return (
-    <div className="bg-white p-6 flex  justify-between  rounded-lg shadow-sm border border-gray-200 my-10 md:w-5xl mx-auto">
+    <div className="bg-white p-6 md:flex w-full  justify-between  rounded-lg shadow-sm border border-gray-200 my-10 lg:w-5xl mx-auto">
       {/* Header */}
       <div className="flex justify-between items-start mb-4">
         <div>

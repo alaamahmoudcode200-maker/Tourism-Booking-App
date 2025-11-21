@@ -8,7 +8,7 @@ import PlaneBackgroundSVG from './svgplan';
 export default function PreferredSeat() {
   return (
     <div
-      className="bg-white rounded-2xl p-4 md:w-3xl lg:w-5xl mx-auto shadow my-15"
+      className="bg-white rounded-2xl p-4 md:w-2xl lg:w-5xl mx-auto shadow my-15"
       
     >
       {/* العنوان */}

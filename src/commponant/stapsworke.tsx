@@ -3,6 +3,7 @@
 import React from 'react';
 import { FaArrowRight, FaMapMarkedAlt, FaTicketAlt, FaPlaneDeparture } from 'react-icons/fa';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 // تعريف أنواع الأيقونات المسموحة
 type StepIcon = typeof FaMapMarkedAlt | typeof FaTicketAlt | typeof FaPlaneDeparture;
 
@@ -58,6 +59,11 @@ const variantAccent: Record<Variant, string> = {
 
 export default function StepsWorke() {
   return (
+        <motion.div
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }} // مدة الأنيميشن
+      >
     <section className="relative overflow-hidden py-8 sm:py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
       {/* الخط كصورة خلف العناصر */}
       <Image 
@@ -93,7 +99,14 @@ export default function StepsWorke() {
 
         {/* Right cards */}
         <div className="steps-right z-10 flex-1 flex flex-col gap-4 sm:gap-5">
-          {steps.map((s) => (
+          {steps.map((s,index) => (
+               <motion.div
+          key={index}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.2 }}
+          
+        >
             <article
               key={s.id}
               className={`group relative z-20 overflow-hidden rounded-xl sm:rounded-2xl lg:rounded-[18px] ${variantBg[s.variant]} p-4 sm:p-5 lg:p-6 shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-transform duration-300 hover:-translate-y-2 hover:shadow-[0_15px_35px_rgba(0,0,0,0.12)]`}
@@ -127,10 +140,10 @@ export default function StepsWorke() {
                   </a>
                 </div>
               </div>
-            </article>
+            </article></motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </section></motion.div>
   );
 }

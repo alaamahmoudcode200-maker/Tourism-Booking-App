@@ -3,7 +3,7 @@
 import React, { useRef } from 'react';
 import { FaChevronLeft, FaChevronRight, FaArrowRight } from 'react-icons/fa';
 import Image from 'next/image';
-
+import TiltWrapper from './testanmation';
 // تعريف نوع العرض (Offer)
 interface Offer {
   id: number;
@@ -17,6 +17,7 @@ const offers: Offer[] = [
   { id: 1, tag: 'Special', title: 'We Make Every Tour Special', image: '/offrs1.png', textColor: 'text-white' },
   { id: 2, tag: 'Limited Offers', title: 'Buy 1, Get 1 Free Attractions', image: '/offrs2.png', textColor: 'text-black' },
   { id: 3, tag: 'Adventure', title: 'Discover Nature’s Hidden Gems', image: '/offrs3.png', textColor: 'text-white' },
+    { id: 4, tag: 'Adventure', title: 'Discover Nature’s Hidden Gems', image: '/offrs3.png', textColor: 'text-white' },
 ];
 
 export default function OffersSection() {
@@ -64,8 +65,9 @@ export default function OffersSection() {
           className="offers-wrapper flex gap-4 sm:gap-5 overflow-x-auto py-2 scroll-smooth hide-scrollbar"
         >
           {offers.map((o) => (
+              <TiltWrapper    key={o.id}>
             <div
-              key={o.id}
+            
               className="offer-card flex-shrink-0 w-[280px] sm:w-[320px] lg:w-[360px] h-[220px] sm:h-[250px] lg:h-[280px] rounded-xl sm:rounded-2xl overflow-hidden flex items-end p-4 sm:p-6 shadow-md relative group hover:shadow-lg transition"
             >
               <Image
@@ -89,6 +91,7 @@ export default function OffersSection() {
                 </a>
               </div>
             </div>
+            </TiltWrapper>
           ))}
         </div>
       </div>
